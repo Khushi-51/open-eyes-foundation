@@ -1,103 +1,118 @@
-import Image from "next/image";
+"use client"
 
-export default function Home() {
+import Navbar from "@/components/Navbar"
+import HeroSection from "@/components/HeroSection"
+import MissionSection from "@/components/MissionSection"
+import ProgramsSection from "@/components/ProgramsSection"
+import AwardsNewsSection from "@/components/AwardsNewsSection"
+import TestimonialsGallerySection from "@/components/TestimonialsGallerySection"
+import DonatePreviewSection from "@/components/DonatePreviewSection"
+import TeamContactSection from "@/components/TeamContactSection"
+import SiteFooter from "@/components/SiteFooter"
+import DonationTable from "@/components/DonationTable"
+import NewsSection from "@/components/NewsSection"
+
+
+const donationItems = [
+  {
+    itemName: "School Bag",
+    itemImage: "/images/bag.jpg",
+    costPerItem: 500,
+    totalGoal: 300,
+    totalProjectGoal: 150000,
+    raisedAmount: 105000,
+  },
+  {
+    itemName: "Notebook",
+    itemImage: "/images/notebook.png",
+    costPerItem: 50,
+    totalGoal: 1000,
+    totalProjectGoal: 50000,
+    raisedAmount: 35000,
+  },
+  {
+    itemName: "Pen",
+    itemImage: "/images/pen.png",
+    costPerItem: 10,
+    totalGoal: 1000,
+    totalProjectGoal: 10000,
+    raisedAmount: 7000,
+  },
+  {
+    itemName: "Pencil",
+    itemImage: "/images/pencil.jpg",
+    costPerItem: 5,
+    totalGoal: 1000,
+    totalProjectGoal: 5000,
+    raisedAmount: 3500,
+  },
+  {
+    itemName: "Sharpener",
+    itemImage: "/images/sharpener.png",
+    costPerItem: 5,
+    totalGoal: 500,
+    totalProjectGoal: 2500,
+    raisedAmount: 1500,
+  },
+  {
+    itemName: "Eraser",
+    itemImage: "/images/eraser.jpg",
+    costPerItem: 5,
+    totalGoal: 500,
+    totalProjectGoal: 2500,
+    raisedAmount: 1000,
+  },
+]
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex flex-col min-h-screen bg-[#F9FAFB]">
+      {/* Navbar */}
+      <Navbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+      {/* Highlight Bar */}
+      <div className="w-full bg-yellow-400 text-center text-sm font-medium text-black py-2">
+        Recognized by the Prime Minister Shri Narendra Modi in “Mann Ki Baat” — The Book Man of Chandigarh, Mr. Sandeep Kumar.
+      </div>
+
+      {/* Page Sections */}
+      <HeroSection />
+      <MissionSection />
+      <DonationTable items={donationItems} />
+      <NewsSection />
+      <ProgramsSection />
+      <AwardsNewsSection />
+      <DonatePreviewSection />
+      <TeamContactSection />
+
+      {/* Share Buttons (clean JSX, no broken attributes) */}
+      <div className="fixed bottom-4 right-4 flex flex-col gap-3 z-50">
+        {[
+          { href: "https://www.facebook.com/sharer/sharer.php?u=https://www.unicef.org/", icon: "facebook_32.png", alt: "Facebook" },
+          { href: "https://twitter.com/intent/tweet?url=https://www.unicef.org/", icon: "twitter_32.png", alt: "Twitter" },
+          { href: "https://www.linkedin.com/shareArticle?url=https://www.unicef.org/", icon: "linkedin_32.png", alt: "LinkedIn" },
+          { href: "https://api.whatsapp.com/send?text=https://www.unicef.org/", icon: "whatsapp_32.png", alt: "WhatsApp" },
+        ].map((s, i) => (
           <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            key={i}
+            href={s.href}
             target="_blank"
             rel="noopener noreferrer"
+            className="transition-transform hover:scale-110"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+            <img
+              src={`https://ws.sharethis.com/images/2017/${s.icon}`}
+              alt={s.alt}
+              width={32}
+              height={32}
+              className="shadow-md rounded-full"
             />
-            Deploy now
           </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <SiteFooter />
     </div>
-  );
+  )
 }
