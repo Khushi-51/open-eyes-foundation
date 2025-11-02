@@ -78,7 +78,7 @@ export default function HomePage() {
       {/* Page Sections */}
       <HeroSection />
       <MissionSection />
-      <DonationTable items={donationItems} />
+      <DonationTable />
       <NewsSection />
       <ProgramsSection />
       <AwardsNewsSection />
