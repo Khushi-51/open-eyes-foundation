@@ -90,7 +90,7 @@ export default function DonationItems() {
 
     <div className="min-h-screen bg-white">
 <section
-  className="relative py-16 text-gray-200"
+  className="relative py-2 md:py-16 text-gray-200"
   style={{
     backgroundImage: "url(assets/imapact_files/8.png)", // replace with your image path
     backgroundSize: "cover",
@@ -107,8 +107,8 @@ export default function DonationItems() {
   ></div>
 
   {/* Content */}
-  <div className="relative max-w-6xl mx-auto px-6">
-    <div className="grid grid-cols-2 z-10 md:grid-cols-4 text-center gap-10 md:gap-8">
+  <div className="relative max-w-6xl mx-auto md:px-6 px-3">
+    <div className="grid grid-cols-2 z-10 md:grid-cols-4 text-center gap-2 md:gap-8">
       {[
         {
           label: "Total Campaigns",
@@ -135,10 +135,10 @@ export default function DonationItems() {
         },
       ].map((stat, index) => (
         <div key={index}>
-          <p className="text-5xl font-extrabold mb-1 drop-shadow-lg">
+          <p className=" text-3xl md:text-5xl font-extrabold mb-1 drop-shadow-lg">
             {stat.value}
           </p>
-          <p className="text-base uppercase tracking-wide text-gray-200">
+          <p className="text-1xl md:text-base uppercase tracking-wide text-gray-200">
             {stat.label}
           </p>
         </div>

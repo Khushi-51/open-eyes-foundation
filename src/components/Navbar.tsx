@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Heart, HandHeart, Phone, Mail, Menu, X } from "lucide-react"
+import { Phone, Mail, Menu, X } from "lucide-react"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
@@ -13,7 +13,6 @@ export default function Navbar() {
       {/* 🔹 Top Bar */}
       <div className="bg-gradient-to-r from-blue-700 to-blue-600 text-white shadow-sm ">
         <div className="container flex justify-between items-center text-sm mx-auto px-4">
-
           <div className="hidden md:flex gap-6 font-medium m-2">
             <a
               href="tel:+917508408205"
@@ -32,7 +31,7 @@ export default function Navbar() {
       </div>
 
       {/* 🔹 Main Navbar */}
-      <nav className="sticky top-0 z-50 border-gray-200">
+      <nav className="sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center mx-10">
             {/* Logo */}
@@ -42,20 +41,19 @@ export default function Navbar() {
                   src="/logos/open-eyes-logo.png"
                   alt="Open Eyes Foundation"
                   fill
-                  className="object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="object-contain group-hover:scale-110 border-none transition-transform duration-300"
                 />
               </div>
-            
             </Link>
 
-            {/* Desktop Nav */}
+            {/* Desktop Nav (Glassy Effect) */}
             <div
-  className="backdrop-blur-md hidden lg:flex items-center gap-8 font-semibold p-2"
-  style={{
-    backgroundColor: "rgba(255, 255, 255, 0.1)",
-    borderBottom: "1.5px solid var(--light-green)",
-  }}
->
+              className="backdrop-blur-md hidden lg:flex items-center gap-8 font-semibold p-2"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                borderBottom: "1.5px solid var(--light-green)",
+              }}
+            >
               <NavLink href="/">Home</NavLink>
 
               <div className="relative group">
@@ -63,16 +61,10 @@ export default function Navbar() {
                   About Us
                 </span>
                 <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 border border-gray-100">
-                  <Link
-                    href="/about"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
+                  <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
                     Our Organization
                   </Link>
-                  <Link
-                    href="/founder"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
+                  <Link href="/founder" className="block px-4 py-2 hover:bg-gray-100">
                     Our Founder
                   </Link>
                 </div>
@@ -86,41 +78,28 @@ export default function Navbar() {
                   Get Involved
                 </span>
                 <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 border border-gray-100">
-                  <Link
-                    href="/get-involved"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
+                  <Link href="/get-involved" className="block px-4 py-2 hover:bg-gray-100">
                     Overview
                   </Link>
-                  <Link
-                    href="/volunteer"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
+                  <Link href="/volunteer" className="block px-4 py-2 hover:bg-gray-100">
                     Volunteer
                   </Link>
-                  <Link
-                    href="/join-as-a-member"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
+                  <Link href="/join-as-a-member" className="block px-4 py-2 hover:bg-gray-100">
                     Become a Member
                   </Link>
-                  <Link
-                    href="/intern"
-                    className="block px-4 py-2 hover:bg-gray-100"
-                  >
+                  <Link href="/intern" className="block px-4 py-2 hover:bg-gray-100">
                     Internship
                   </Link>
                 </div>
               </div>
+
               <NavLink href="/contact">Contact Us</NavLink>
 
               <Link
                 href="/donate-now"
                 className="ml-2 bg-red-900 hover:bg-yellow-400 text-white px-5 py-2 rounded-lg font-bold transition-transform hover:scale-105 shadow"
               >
-                <div className="flex items-center gap-2">
-                  Donate
-                </div>
+                <div className="flex items-center gap-2">Donate</div>
               </Link>
             </div>
 
@@ -134,37 +113,56 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* 🔹 Mobile Navigation */}
-          {mobileMenuOpen && (
-            <div className="lg:hidden py-4 border-t border-gray-200">
-              <div className="flex flex-col gap-3 font-medium text-gray-700">
-                {[
-                  { href: "/", label: "Home" },
-                  { href: "/about", label: "About Us" },
-                  { href: "/what-we-do", label: "What We Do" },
-                  { href: "/achievements", label: "Achievements" },
-                  { href: "/get-involved", label: "Get Involved" },
-                  { href: "/contact", label: "Contact Us" },
-                ].map((item) => (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 hover:text-blue-700"
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-
-                <Link
-                  href="/donate"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="mt-2 bg-yellow-500 hover:bg-yellow-400 text-white text-center py-2 rounded-md font-semibold"
-                >
-                  Donate Now
-                </Link>
-              </div>
+          {/* 🔹 Mobile Sidebar (Solid Background) */}
+          <div
+            className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-300 z-50 ${
+              mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+            }`}
+          >
+            <div className="flex justify-between items-center p-4 border-b border-gray-200">
+              <span className="font-bold text-lg">Menu</span>
+              <button
+                onClick={() => setMobileMenuOpen(false)}
+                aria-label="Close Menu"
+              >
+                <X size={24} />
+              </button>
             </div>
+            <div className="flex flex-col mt-4 gap-3 font-medium text-gray-700 px-4">
+              {[
+                { href: "/", label: "Home" },
+                { href: "/about", label: "About Us" },
+                { href: "/what-we-do", label: "What We Do" },
+                { href: "/achievements", label: "Achievements" },
+                { href: "/get-involved", label: "Get Involved" },
+                { href: "/contact", label: "Contact Us" },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="py-2 hover:text-blue-700"
+                >
+                  {item.label}
+                </Link>
+              ))}
+
+              <Link
+                href="/donate"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-2 bg-yellow-500 hover:bg-yellow-400 text-white text-center py-2 rounded-md font-semibold"
+              >
+                Donate Now
+              </Link>
+            </div>
+          </div>
+
+          {/* Overlay for Sidebar */}
+          {mobileMenuOpen && (
+            <div
+              className="fixed inset-0 bg-black bg-opacity-30 z-40"
+              onClick={() => setMobileMenuOpen(false)}
+            />
           )}
         </div>
       </nav>
