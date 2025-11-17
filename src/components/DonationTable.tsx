@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Menu, X } from "lucide-react"
 import Link from "next/link"
 import SectionHeader from "./SectionHeaders"
@@ -85,10 +85,55 @@ export default function DonationItems() {
   const getProgressPercentage = (current: number, total: number) => {
     return Math.min((current / total) * 100, 100)
   }
+  const useCountUp = (end: number, duration = 1500) => {
+    const [count, setCount] = useState(0);
+
+    useEffect(() => {
+      let start = 0;
+      const increment = end / (duration / 16); // roughly 60fps
+      const step = () => {
+        start += increment;
+        if (start < end) {
+          setCount(Math.floor(start));
+          requestAnimationFrame(step);
+        } else {
+          setCount(end);
+        }
+      };
+      requestAnimationFrame(step);
+    }, [end, duration]);
+
+    return count;
+  };
+  const stats = [
+    {
+      label: "Total Campaigns",
+      value: donationItems.length,
+    },
+    {
+      label: "Total Fund Raised",
+      value: donationItems.reduce(
+        (sum, item) => sum + item.currentContributions,
+        0
+      ),
+      isCurrency: true,
+    },
+    {
+      label: "Happy Volunteers",
+      value: donationItems.reduce(
+        (sum, item) => sum + item.contributorCount,
+        0
+      ),
+    },
+    {
+      label: "Years of Fund Raising",
+      value: new Date().getFullYear() - 2018,
+    },
+  ];
 
   return (
 
-    <div className="min-h-screen bg-white">
+<div className="min-h-screen bg-white">
 <section
   className="relative py-2 md:py-16 text-gray-200"
   style={{
@@ -107,44 +152,26 @@ export default function DonationItems() {
   ></div>
 
   {/* Content */}
-  <div className="relative max-w-6xl mx-auto md:px-6 px-3">
-    <div className="grid grid-cols-2 z-10 md:grid-cols-4 text-center gap-2 md:gap-8">
-      {[
-        {
-          label: "Total Campaigns",
-          value: donationItems.length,
-        },
-        {
-          label: "Total Fund Raised",
-          value:
-            "₹" +
-            donationItems
-              .reduce((sum, item) => sum + item.currentContributions, 0)
-              .toLocaleString(),
-        },
-        {
-          label: "Happy Volunteers",
-          value: donationItems.reduce(
-            (sum, item) => sum + item.contributorCount,
-            0
-          ),
-        },
-        {
-          label: "Years of Fund Raising",
-          value: new Date().getFullYear() - 2018, // since 2018 example
-        },
-      ].map((stat, index) => (
-        <div key={index}>
-          <p className=" text-3xl md:text-5xl font-extrabold mb-1 drop-shadow-lg">
-            {stat.value}
-          </p>
-          <p className="text-1xl md:text-base uppercase tracking-wide text-gray-200">
-            {stat.label}
-          </p>
-        </div>
-      ))}
+ <div className="relative max-w-6xl mx-auto md:px-6 px-3 py-10">
+      <div className="grid grid-cols-2 md:grid-cols-4 text-center gap-4 md:gap-8 z-10">
+        {stats.map((stat, index) => {
+          const count = useCountUp(stat.value);
+
+          return (
+            <div key={index}>
+              <p className="text-3xl md:text-5xl font-extrabold mb-1 drop-shadow-lg text-white">
+                {stat.isCurrency
+                  ? `₹${count.toLocaleString()}+`
+                  : `${count}+`}
+              </p>
+              <p className="text-sm md:text-base uppercase tracking-wide text-gray-200">
+                {stat.label}
+              </p>
+            </div>
+          );
+        })}
+      </div>
     </div>
-  </div>
 </section>
         
       {/* Donation Items Table */}

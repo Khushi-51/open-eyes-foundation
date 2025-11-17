@@ -87,7 +87,7 @@ export default function NewsSection() {
           All News
         </button>
         </div>
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 px-2 py-2 mx-20">
+      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 px-2 py-2 mx-5 md:mx-20">
         {newsData.map((news, index) => {
           const color =
             index % 2 === 0 ? "bg-red-600" : "bg-red-500";

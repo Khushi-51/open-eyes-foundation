@@ -7,6 +7,11 @@ import { Phone, Mail, Menu, X } from "lucide-react"
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
+  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+  const toggleDropdown = (label: string) => {
+    setOpenDropdown(openDropdown === label ? null : label);
+  };
 
   return (
     <>
@@ -128,33 +133,127 @@ export default function Navbar() {
                 <X size={24} />
               </button>
             </div>
-            <div className="flex flex-col mt-4 gap-3 font-medium text-gray-700 px-4">
-              {[
-                { href: "/", label: "Home" },
-                { href: "/about", label: "About Us" },
-                { href: "/what-we-do", label: "What We Do" },
-                { href: "/achievements", label: "Achievements" },
-                { href: "/get-involved", label: "Get Involved" },
-                { href: "/contact", label: "Contact Us" },
-              ].map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="py-2 hover:text-blue-700"
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <div className="flex flex-col mt-4 gap-2 font-medium text-gray-700 px-4">
+      {/* Regular Links */}
+      <Link
+        href="/"
+        onClick={() => setMobileMenuOpen(false)}
+        className="py-2 hover:text-blue-700"
+      >
+        Home
+      </Link>
 
-              <Link
-                href="/donate"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 bg-yellow-500 hover:bg-yellow-400 text-white text-center py-2 rounded-md font-semibold"
-              >
-                Donate Now
-              </Link>
-            </div>
+      {/* About Us Dropdown */}
+      <div>
+        <button
+          onClick={() => toggleDropdown("about")}
+          className="w-full flex justify-between items-center py-2 hover:text-blue-700"
+        >
+          <span>About Us</span>
+          <span className="text-gray-500">{openDropdown === "about" ? "−" : "+"}</span>
+        </button>
+
+        {openDropdown === "about" && (
+          <div className="flex flex-col ml-4 border-l border-gray-300 pl-3 text-sm text-gray-600">
+            <Link
+              href="/about"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              About the Organisation
+            </Link>
+            <Link
+              href="/about/founder"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              About the Founder
+            </Link>
+            
+          </div>
+        )}
+      </div>
+
+      {/* What We Do */}
+      <Link
+        href="/what-we-do"
+        onClick={() => setMobileMenuOpen(false)}
+        className="py-2 hover:text-blue-700"
+      >
+        What We Do
+      </Link>
+
+      {/* Achievements */}
+      <Link
+        href="/achievements"
+        onClick={() => setMobileMenuOpen(false)}
+        className="py-2 hover:text-blue-700"
+      >
+        Achievements
+      </Link>
+
+      {/* Get Involved Dropdown */}
+      <div>
+        <button
+          onClick={() => toggleDropdown("involved")}
+          className="w-full flex justify-between items-center py-2 hover:text-blue-700"
+        >
+          <span>Get Involved</span>
+          <span className="text-gray-500">{openDropdown === "involved" ? "−" : "+"}</span>
+        </button>
+
+        {openDropdown === "involved" && (
+          <div className="flex flex-col ml-4 border-l border-gray-300 pl-3 text-sm text-gray-600">
+            <Link
+              href="/get-involved"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              Overview
+            </Link>
+            <Link
+              href="/volunteer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              Volunteer
+            </Link>
+            <Link
+              href="/join-as-a-member"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              Become a Member
+            </Link>
+            <Link
+              href="/join-as-an-intern"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              Internship
+            </Link>
+          </div>
+        )}
+      </div>
+
+      {/* Contact Us */}
+      <Link
+        href="/contact"
+        onClick={() => setMobileMenuOpen(false)}
+        className="py-2 hover:text-blue-700"
+      >
+        Contact Us
+      </Link>
+
+      {/* Donate Button */}
+      <Link
+        href="/donate"
+        onClick={() => setMobileMenuOpen(false)}
+        className="mt-3 bg-yellow-500 hover:bg-yellow-400 text-white text-center py-2 rounded-md font-semibold"
+      >
+        Donate Now
+      </Link>
+    </div>
           </div>
 
           {/* Overlay for Sidebar */}

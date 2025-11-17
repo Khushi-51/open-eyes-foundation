@@ -10,7 +10,7 @@ export default function Hero() {
       style={{ backgroundColor: "hsl(var(--primary))" }}
     >
       //one focus line at top
-      <div className=" w-full h-1 bg-yellow-400" />
+      <div className="w-full h-1 bg-yellow-400" />
       Recognized by the Prime Minister Shri Narendra Modi in “Mann Ki Baat” — The Book Man of Chandigarh, Mr. Sandeep Kumar.
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         <div className="space-y-6 text-center md:text-left">
