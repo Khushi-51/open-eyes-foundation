@@ -35,15 +35,17 @@ const donationItems: DonationItem[] = [
   { id: "pencil", image: "/images/pencil.jpg", totalNeeded: 1200, price: 80, raised: 420 },
   { id: "sharpener", image: "/images/sharpener.png", totalNeeded: 600, price: 40, raised: 180 },
   { id: "eraser", image: "/images/eraser.jpg", totalNeeded: 700, price: 60, raised: 210 },
+  { id: "geometry", image: "/images/geometry.jpg", totalNeeded: 700, price: 60, raised: 210 },
 ];
 
 const itemMeta: Record<string, { name: string; requiredLabel: string; priceLabel: string }> = {
-  bag: { name: "School Kit Support", requiredLabel: "500 Children", priceLabel: "₹300 / Bag" },
-  notebook: { name: "Notebook Support", requiredLabel: "1000 Children", priceLabel: "₹50 / Notebook" },
-  pen: { name: "Pen Pack", requiredLabel: "800 Students", priceLabel: "₹100 / Pack" },
-  pencil: { name: "Pencil Pack", requiredLabel: "1200 Students", priceLabel: "₹80 / Pack" },
-  sharpener: { name: "Sharpener", requiredLabel: "600 Students", priceLabel: "₹40 / Piece" },
-  eraser: { name: "Eraser", requiredLabel: "700 Students", priceLabel: "₹60 / Piece" },
+  bag: { name: "School Bag", requiredLabel: "500 Children", priceLabel: "₹300 / Bag" },
+  notebook: { name: "Notebook", requiredLabel: "1000 Children", priceLabel: "₹50 / Notebook" },
+  pen: { name: "Pen", requiredLabel: "800 Students", priceLabel: "₹100 / Pen" },
+  pencil: { name: "Pencil", requiredLabel: "1200 Students", priceLabel: "₹80 / Pencil" },
+  sharpener: { name: "Sharpener", requiredLabel: "600 Students", priceLabel: "₹40 / Sharpener" },
+  eraser: { name: "Eraser", requiredLabel: "700 Students", priceLabel: "₹60 / Eraser" },
+  geometry: { name: "Geometry", requiredLabel: "700 Students", priceLabel: "₹60 / Box" }
 };
 
 const programs: ProgramItem[] = [
