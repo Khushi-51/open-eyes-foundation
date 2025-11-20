@@ -13,17 +13,7 @@ import SiteFooter from "@/components/SiteFooter"
 import DonationTable from "@/components/DonationTable"
 import NewsSection from "@/components/NewsSection"
 
-useEffect(() => {
-  const hash = window.location.hash;
-  if (hash) {
-    const el = document.querySelector(hash);
-    if (el) {
-      setTimeout(() => {
-        el.scrollIntoView({ behavior: "smooth" });
-      }, 400);
-    }
-  }
-}, []);
+// scrollToHash will run on client after the page mounts (moved into component)
 
 const donationItems = [
   {
@@ -77,6 +67,24 @@ const donationItems = [
 ]
 
 export default function HomePage() {
+  useEffect(() => {
+    const scrollToHash = () => {
+      const hash = window.location.hash;
+      if (!hash) return;
+
+      const el = document.querySelector(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // If not rendered yet, retry after short delay
+        setTimeout(scrollToHash, 300);
+      }
+    };
+
+    // Try after the first render
+    setTimeout(scrollToHash, 400);
+  }, []);
+
   return (
     <div className="flex flex-col min-h-screen bg-[#F9FAFB]">
       {/* Navbar */}
@@ -90,7 +98,7 @@ export default function HomePage() {
       {/* Page Sections */}
       <HeroSection />
       <MissionSection />
-      <div id="donation_table">
+      <div id="donation-table">
         <DonationTable/>
       </div>
         
