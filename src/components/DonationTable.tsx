@@ -123,15 +123,15 @@ function CountUp({ end, isCurrency = false }: { end: number; isCurrency?: boolea
 export default function DonationTablesSingle() {
   const getProgress = (raised: number, total: number) =>
     Math.min(Math.round((raised / total) * 100), 100);
+type ImpactStat = { label: string; value: number; isCurrency?: boolean };
 
-  // --- Impact Stats (all value fields are numbers)
-  const impactStats = [
-    { label: "Books Distributed", value: 20000 },
-    { label: "Mobile Libraries", value: 2 },
-    { label: "Library of Honesty", value: 6 },
-    { label: "Education Scholarships", value: 110 },
-    { label: "Educational Kits Distributed", value: 5000 },
-  ];
+const impactStats: ImpactStat[] = [
+  { label: "Books Distributed", value: 20000 },
+  { label: "Mobile Libraries", value: 2 },
+  { label: "Library of Honesty", value: 6 },
+  { label: "Education Scholarships", value: 110 },
+  { label: "Educational Kits Distributed", value: 5000 },
+];
 
   return (
     <div className="min-h-screen bg-gray-50 text-gray-800">
