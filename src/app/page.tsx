@@ -1,4 +1,5 @@
 "use client"
+import { useEffect } from "react"
 
 import Navbar from "@/components/Navbar"
 import HeroSection from "@/components/HeroSection"
@@ -12,6 +13,17 @@ import SiteFooter from "@/components/SiteFooter"
 import DonationTable from "@/components/DonationTable"
 import NewsSection from "@/components/NewsSection"
 
+useEffect(() => {
+  const hash = window.location.hash;
+  if (hash) {
+    const el = document.querySelector(hash);
+    if (el) {
+      setTimeout(() => {
+        el.scrollIntoView({ behavior: "smooth" });
+      }, 400);
+    }
+  }
+}, []);
 
 const donationItems = [
   {
