@@ -16,15 +16,15 @@ interface NewsItem {
 const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "Education Awareness Drive Held in Sector 18",
+    title: "Sandeep Kumar and 200 volunteers of his NGO go door-to-door to collect books that UT residents do not require",
     image: "/assets/news/news1.jpg",
-    date: "August 7, 2025",
+    date: "August 7, 2023",
     category: "Events",
     link: "#",
   },
   {
     id: 2,
-    title: "Health Camp Initiative Empowers 30 Children",
+    title: "Mobile Library: A Van Turned into a Library to Distribute Books.",
     image: "/assets/news/news2.png",
     date: "August 8, 2025",
     category: "Spotlights",
@@ -32,7 +32,7 @@ const newsData: NewsItem[] = [
   },
   {
     id: 3,
-    title: "Tree Plantation Drive at Sector 20 Park",
+    title: "Hon’ble Prime Minister Narendra Modi praised Chandigarh’s Sandeep Kumar during Mann Ki Baat.",
     image: "/assets/news/news3.png",
     date: "August 15, 2025",
     category: "Articles",
@@ -40,7 +40,7 @@ const newsData: NewsItem[] = [
   },
   {
     id: 4,
-    title: "Women Empowerment Workshop Held at Sector 22",
+    title: "Hope on Wheels: Sandeep Kumar’s initiative ‘Raddi Se Shiksha’.",
     image: "/assets/news/news4.png",
     date: "August 21, 2025",
     category: "Articles",
@@ -48,7 +48,7 @@ const newsData: NewsItem[] = [
   },
   {
     id: 5,
-    title: "Skill Development Drive Empowers Youth",
+    title: "This library has no lock whoever needs a book may take it and return it honestly.",
     image: "/assets/news/news5.png",
     date: "August 27, 2025",
     category: "Programs",
@@ -56,7 +56,7 @@ const newsData: NewsItem[] = [
   },
   {
     id: 6,
-    title: "Medical Awareness Workshop Hosted Successfully",
+    title: "Collected 10,000 old books in 2 years; helping 200 poor children study",
     image: "/assets/news/news6.png",
     date: "September 1, 2025",
     category: "Health",

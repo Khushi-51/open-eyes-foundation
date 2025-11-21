@@ -1,7 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { motion } from "framer-motion";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+import { X } from "lucide-react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -13,7 +15,7 @@ const awards = [
   },
   {
     title: "CSR Partnership Award",
-    desc: "Honored for impactful collaborations with corporate CSR programs.",
+    desc: "The Open Eyes Foundation was honored by Nehru Yuva Kendra Sanghthan, Chandigarh, Government of India, Ministry of Youth Affairs and Sports at the District Youth Convention at RGNIYD for its significant contribution in the social sector on 20th January 2018.",
     img: "/assets/awards/award2.jpg",
   },
   {
@@ -23,7 +25,7 @@ const awards = [
   },
   {
     title: "Community Service Award",
-    desc: "For consistent dedication to community-based educational outreach.",
+    desc: "The founder of the Open Eyes Foundation, winner of JIYO DIL SE AWARD SESSION -7 receiving award from Member of Parliament Smt. Kiran kher and Mayor of Chandigarh Mr. Rajesh Kalia at Chandigarh club sector – 1 Chandigarh. (16 March 2019).",
     img: "/assets/awards/award4.png",
   },
   {
@@ -44,6 +46,27 @@ const awards = [
 ];
 
 export default function AwardsCarousel(): React.ReactElement {
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [currentAward, setCurrentAward] = useState<{ title: string; desc: string; img: string } | null>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightboxOpen(false);
+    };
+    if (lightboxOpen) document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [lightboxOpen]);
+
+  const openLightbox = (award: { title: string; desc: string; img: string }) => {
+    setCurrentAward(award);
+    setLightboxOpen(true);
+  };
+
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    // small delay to clear image for smoother UX
+    setTimeout(() => setCurrentAward(null), 200);
+  };
   const settings = {
     dots: true,
     infinite: true,
@@ -80,7 +103,7 @@ export default function AwardsCarousel(): React.ReactElement {
       </div>
 
       {/* Carousel */}
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-7xl mx-auto px-6 relative">
         <Slider {...settings}>
           {awards.map((award, i) => (
             <motion.div
@@ -89,16 +112,15 @@ export default function AwardsCarousel(): React.ReactElement {
               transition={{ type: "spring", stiffness: 200 }}
               className="px-4"
             >
-              <div className="relative rounded-xl overflow-hidden shadow-lg border border-[#FACC15]/30 hover:border-[#FACC15] transition-all duration-500">
+              <div
+                className="relative rounded-xl overflow-hidden shadow-lg border border-[#FACC15]/30 hover:border-[#FACC15] transition-all duration-500 cursor-pointer"
+                onClick={() => openLightbox(award)}
+              >
                 {/* Award Image */}
-                <img
-                  src={award.img}
-                  alt={award.title}
-                  className="w-full h-64 object-cover"
-                />
+                <img src={award.img} alt={award.title} className="w-full h-96 object-cover" />
 
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#001233]/90 to-transparent"></div>
+                {/* Overlay (allow clicks through) */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#001233]/90 to-transparent pointer-events-none"></div>
 
                 {/* Text Content */}
                 <div className="absolute bottom-0 p-5">
@@ -111,6 +133,49 @@ export default function AwardsCarousel(): React.ReactElement {
             </motion.div>
           ))}
         </Slider>
+        {/* Lightbox modal (AnimatePresence + Next Image like News modal) */}
+        <AnimatePresence>
+          {lightboxOpen && currentAward && (
+            <motion.div
+              className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              {/* Close Button */}
+              <button
+                className="absolute top-6 right-8 text-white hover:text-red-500 transition text-3xl z-50"
+                onClick={closeLightbox}
+              >
+                <X size={32} />
+              </button>
+
+              {/* Modal Content */}
+              <motion.div
+                className="relative w-full max-w-5xl mx-auto flex flex-col items-center"
+                initial={{ scale: 0.95, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.95, opacity: 0 }}
+              >
+                <div className="relative w-full h-[70vh]">
+                  <Image
+                    src={currentAward.img}
+                    alt={currentAward.title}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <div className="text-center mt-6 text-white px-6">
+                  <h2 className="text-2xl font-bold">{currentAward.title}</h2>
+                  <p className="text-gray-400 mt-2">{currentAward.desc}</p>
+                  <span className="bg-[#FACC15] text-xs px-3 py-1 mt-3 inline-block rounded-full font-semibold tracking-wide text-black">
+                    Award
+                  </span>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
