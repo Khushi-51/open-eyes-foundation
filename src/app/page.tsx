@@ -111,10 +111,11 @@ export default function HomePage() {
       {/* Share Buttons (clean JSX, no broken attributes) */}
       <div className="fixed bottom-4 right-4 flex flex-col gap-3 z-50">
         {[
-          { href: "https://www.facebook.com/sharer/sharer.php?u=https://www.unicef.org/", icon: "facebook_32.png", alt: "Facebook" },
-          { href: "https://twitter.com/intent/tweet?url=https://www.unicef.org/", icon: "twitter_32.png", alt: "Twitter" },
-          { href: "https://www.linkedin.com/shareArticle?url=https://www.unicef.org/", icon: "linkedin_32.png", alt: "LinkedIn" },
-          { href: "https://api.whatsapp.com/send?text=https://www.unicef.org/", icon: "whatsapp_32.png", alt: "WhatsApp" },
+          { href: "https://www.facebook.com/share/1KHE9BSnvp/", icon: "facebook_32.png", alt: "Facebook" },
+          { href: "https://www.instagram.com/open_eyes_foundation_ngo", icon: "instagram_32.png", alt: "Instagram" },
+          { href: "https://www.twitter.com/openeyesfdnchd", icon: "twitter_32.png", alt: "Twitter" },
+          { href: "https://www.linkedin.com/in/open-eyes-foundation-a683651a1", icon: "linkedin_32.png", alt: "LinkedIn" },
+          { href: "https://www.youtube.com/@openeyesfoundationngo", icon: "youtube_32.png", alt: "Youtube" },
         ].map((s, i) => (
           <a
             key={i}

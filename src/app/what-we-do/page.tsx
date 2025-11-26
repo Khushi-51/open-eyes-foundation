@@ -36,7 +36,7 @@ export default function WhatWeDoPage(): React.ReactElement {
                 <Image src={p.img} alt={p.title} width={600} height={360} className="w-full h-85 object-contain rounded" />
                 <h3 className="mt-3 font-semibold text-[#003366] px-2">{p.title}</h3>
                 <p className="text-sm mt-2 text-[#374151] px-2">{p.desc}</p>
-                <div className="mt-3 p-2"><a href="https://openeyesfoundation.org.in/what-we-do/" target="_blank" rel="noopener noreferrer" className="text-[#0056B3]">Learn more →</a></div>
+                <div className="mt-3 p-2"><a href="\what-we-do\naya-savera" target="_blank" rel="noopener noreferrer" className="text-[#0056B3]">Learn more →</a></div>
               </article>
             ))}
           </div>

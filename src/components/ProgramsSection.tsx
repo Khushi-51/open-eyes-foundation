@@ -57,25 +57,30 @@ export default function ProgramsSection(): React.ReactElement {
           {programs.map((p, index) => (
             <div
               key={index}
-              className="group relative rounded-xl border-2 border-[var(--light-green)]/60 bg-white shadow-md hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
+              className="group relative rounded-xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden"
             >
-              {/* Image with overlay */}
-              <div className="relative h-52 overflow-hidden">
+              {/* Circular Image */}
+              <div className="relative w-64 h-64  mx-auto mt-5 overflow-hidden rounded-full">
                 <img
                   src={p.img}
                   alt={p.title}
-                  className="w-full h-80& object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-full object-contain rounded-full group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-[rgba(13,39,62,0.5)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               {/* Content */}
-              <div className="p-5 flex flex-col h-full">
-               <h3 className="font-semibold text-[#003366] text-lg mb-2"> 
-                {p.title} 
-                </h3> 
-                <p className="text-sm text-[#374151] mb-4 ">{p.desc}</p> 
-                <a href="#" className="text-[#374151] text-sm font-medium flex items-center gap-1 hover:underline" > Learn more <ArrowRight size={14} /> </a> </div>
+              <div className="p-5 flex flex-col h-full text-center">
+                <h3 className="font-semibold text-[#003366] text-lg mb-2">
+                  {p.title}
+                </h3>
+                <p className="text-sm text-[#374151] mb-4">{p.desc}</p>
+                <a
+                  href="#"
+                  className="text-[#374151] text-sm font-medium flex items-center justify-center gap-1 hover:underline"
+                >
+                  Learn more <ArrowRight size={14} />
+                </a>
+              </div>
             </div>
           ))}
         </div>

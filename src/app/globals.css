@@ -20,7 +20,18 @@
   --black-100: #000000;
   --black-200: #000000;
   /* ...add others as needed */
+  --emerald-700: rgba(42, 127, 98, 1);     /* #2A7F62 */
+  --emerald-500: rgba(69, 168, 128, 1);    /* #45A880 */
+  --emerald-300: rgba(110, 193, 154, 1);   /* #6EC19A */
+  --emerald-200: rgba(191, 237, 225, 1);   /* #BFEDE1 */
+  --emerald-50:  rgba(244, 251, 248, 1);   /* #F4FBF8 */
 
+  /* Navy / Slate Contrast */
+  --navy-900: rgba(13, 34, 53, 1);         /* #0D2235 */
+  --navy-800: rgba(19, 64, 85, 1);         /* #134055 */
+
+  /* Soft Background */
+  --bg-soft: rgba(247, 250, 249, 1);       /* #F7FAF9 */
   /* Tufts Blue */
   --tufts-blue: #418bcc;
   --tufts-blue-100: #0b1c2b;
