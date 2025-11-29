@@ -5,7 +5,7 @@ import { Facebook, Instagram, Youtube, Linkedin, Twitter } from "lucide-react"
 
 export default function Footer(): React.ReactElement {
   return (
-    <footer className="bg-[rgba(0,20,60,0.85)] text-white py-10 mt-16">
+    <footer className="bg-[rgba(0,20,60,0.85)] text-white py-10">
       <div className="mx-auto px-6 md:px-12 grid md:grid-cols-4 gap-8">
         
         {/* Logo & Foundation Info */}
