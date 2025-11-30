@@ -115,7 +115,7 @@ export default function NewsSection() {
                 >
                   {news.category}
                 </span>
-                <p className="text-xs text-gray-300 mt-1">{news.date}</p>
+                {/* <p className="text-xs text-gray-300 mt-1">{news.date}</p> */}
               </div>
             </motion.div>
           );
@@ -157,7 +157,7 @@ export default function NewsSection() {
               </div>
               <div className="text-center mt-6 text-white px-6">
                 <h2 className="text-2xl font-bold">{selectedNews.title}</h2>
-                <p className="text-gray-400 mt-2">{selectedNews.date}</p>
+                {/* <p className="text-gray-400 mt-2">{selectedNews.date}</p> */}
                 <span className="bg-red-600 text-xs px-3 py-1 mt-3 inline-block rounded-full uppercase font-semibold tracking-wide">
                   {selectedNews.category}
                 </span>

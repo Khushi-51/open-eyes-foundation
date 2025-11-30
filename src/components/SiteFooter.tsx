@@ -39,7 +39,7 @@ export default function Footer(): React.ReactElement {
             <li>Join as a Member</li>
             <li>Join as a Volunteer</li>
             <li>Join as an Intern</li>
-            <li>Donate Books</li>
+           
           </ul>
         </div>
 
@@ -49,7 +49,7 @@ export default function Footer(): React.ReactElement {
             Legal Status
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>Registered under Societies Registration Act, 1860 (Reg. 4687)</li>
+            <li>Registered under Societies Registration Act, 1860</li>
             <li>Section 12AA - Income Tax Act, 1961</li>
             <li>Section 80G - Income Tax Act, 1961</li>
             <li>NITI Aayog & CSR-1 Registered</li>
@@ -65,21 +65,22 @@ export default function Footer(): React.ReactElement {
             <li>#10, Khuda Jassu, Chandigarh - 160036</li>
             <li>📞 +91-7508408205</li>
             <li>✉️ openeyesfoundationhr@gmail.com</li>
+            <a href="/contact-us" className="mt-4 inline-block text-sm text-white hover:text-[18px]">Full contact & CSR enquiries →</a>
           </ul>
           <div className="flex items-center gap-4">
-            <a href="#" className="hover:text-[var(--light-green)] transition-colors">
+            <a href="https://www.facebook.com/share/1KHE9BSnvp/" className="hover:text-[var(--light-green)] transition-colors">
               <Facebook size={20} />
             </a>
-            <a href="#" className="hover:text-[var(--light-green)] transition-colors">
+            <a href="https://www.instagram.com/open_eyes_foundation_ngo" className="hover:text-[var(--light-green)] transition-colors">
               <Instagram size={20} />
             </a>
-            <a href="#" className="hover:text-[var(--light-green)] transition-colors">
+            <a href="https://www.youtube.com/@openeyesfoundationngo" className="hover:text-[var(--light-green)] transition-colors">
               <Youtube size={20} />
             </a>
-            <a href="#" className="hover:text-[var(--light-green)] transition-colors">
+            <a href="https://www.linkedin.com/in/open-eyes-foundation-a683651a1" className="hover:text-[var(--light-green)] transition-colors">
               <Linkedin size={20} />
             </a>
-            <a href="#" className="hover:text-[var(--light-green)] transition-colors">
+            <a href="https://www.twitter.com/openeyesfdnchd" className="hover:text-[var(--light-green)] transition-colors">
               <Twitter size={20} />
             </a>
           </div>

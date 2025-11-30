@@ -32,7 +32,7 @@ export default function MissionSection(): React.ReactElement {
             You’re the <span className="text-[#2563EB]">Hope of Others.</span>
           </h2>
 
-          <p className="mt-4 text-[#4B5563] text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-[#4B5563] text-sm md:text-base leading-relaxed text-justify">
             Open Eyes Foundation Manimajra Chandigarh (OEFMC), a non-governmental
             organization (NGO), has been working tirelessly since 2017 to sustain
             the education of thousands of underprivileged students. The
@@ -42,10 +42,10 @@ export default function MissionSection(): React.ReactElement {
             free of cost to those in need.
           </p>
 
-          <p className="mt-3 text-[#4B5563] text-sm md:text-base leading-relaxed">
+          <p className="mt-3 text-[#4B5563] text-sm md:text-base leading-relaxed text-justify">
             The foundation establishes mobile, community, and school libraries
             to enhance learning accessibility and supports educational expenses
-            for underprivileged children — ensuring no child’s education stops
+            for underprivileged children ensuring no child’s education stops
             due to lack of resources.
           </p>
 
@@ -59,7 +59,7 @@ export default function MissionSection(): React.ReactElement {
             </a>
             <div className="flex items-center gap-2 text-[#2563EB] font-medium">
               <Phone size={18} />
-              <span>+91 6841 556 0102</span>
+              <span>+91 7508408205</span>
             </div>
           </div>
         </div>

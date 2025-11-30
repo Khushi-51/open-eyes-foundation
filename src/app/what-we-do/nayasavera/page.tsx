@@ -23,14 +23,40 @@ type Step = {
   title: string;
   subtitle?: string;
   icon: React.ReactNode;
+  img: React.ReactNode;
 };
 
 const STEPS: Step[] = [
-  { id: 1, title: "Selection & Priority", subtitle: "Orphan/single-parent; income < ₹2L", icon: <UserCheck size={18} /> },
-  { id: 2, title: "Home Visit & Verification", subtitle: "Project coordinator verification", icon: <Home size={18} /> },
-  { id: 3, title: "Direct Payment", subtitle: "Fees paid directly to school/college", icon: <CreditCard size={18} /> },
-  { id: 4, title: "Quarterly Monitoring", subtitle: "Academic progress & material checks", icon: <Clock size={18} /> },
+  { 
+    id: 1, 
+    title: "Selection & Priority", 
+    subtitle: "Orphan/single-parent; income < ₹2L", 
+    icon: <UserCheck size={18} />,
+    img: "/assets/projects/naya-savera/s-1.png"
+  },
+  { 
+    id: 2, 
+    title: "Home Visit & Verification", 
+    subtitle: "Project coordinator verification", 
+    icon: <Home size={18} />,
+    img: "/assets/sop/step2.png"
+  },
+  { 
+    id: 3, 
+    title: "Direct Payment", 
+    subtitle: "Fees paid directly to school/college", 
+    icon: <CreditCard size={18} />,
+    img: "/assets/sop/step3.png"
+  },
+  { 
+    id: 4, 
+    title: "Quarterly Monitoring", 
+    subtitle: "Academic progress & material checks", 
+    icon: <Clock size={18} />,
+    img: "/assets/sop/step4.png"
+  },
 ];
+
 
 /* -------------------------
   Small UI subcomponents
@@ -58,24 +84,40 @@ function Kpi({ value, label }: { value: string; label: string }) {
 }
 
 /* Styled circle used in the flow steps to match the curated look */
+/* Styled circle used in the flow steps to match the curated look */
 function StepCircle({ step }: { step: Step }) {
   return (
     <div className="flex flex-col items-center w-56">
       <div className="relative">
-        <div className="w-40 h-40 rounded-full border-4 border-dashed border-[var(--light-green-200)] flex items-center justify-center bg-white shadow-sm">
-          <div className="w-28 h-28 rounded-full bg-[var(--light-green-200)]/8 flex items-center justify-center text-[var(--light-green-200)]">
-            {step.icon}
+        {/* Outer Dashed Circle */}
+        <div className="w-40 h-40 rounded-full border-[4px] border-dashed border-[var(--light-green-200)] flex items-center justify-center bg-white shadow-sm">
+          
+          {/* Inner Soft Circle */}
+          <div className="w-36 h-36 rounded-full bg-[var(--light-green-200)]/10 flex items-center justify-center overflow-hidden">
+
+            {/* FIX: IMAGE SHOULD RENDER PROPERLY */}
+            <Image
+              src={step.img}
+              alt={step.title}
+              width={144}
+              height={144}
+              className="object-contain rounded-full"
+            />
           </div>
         </div>
       </div>
 
+      {/* Text under the circle */}
       <div className="mt-4 text-center">
         <div className="text-sm font-semibold text-[var(--navy-800)]">{step.title}</div>
-        {step.subtitle && <div className="text-xs text-slate-500 mt-1">{step.subtitle}</div>}
+        {step.subtitle && (
+          <div className="text-xs text-slate-500 mt-1">{step.subtitle}</div>
+        )}
       </div>
     </div>
   );
 }
+
 
 /* Curved connector SVG between steps (responsive) */
 function ConnectorSVG() {
@@ -144,9 +186,13 @@ export default function Page(): React.ReactElement {
       {/* ================= Our Mission (cards) ================= */}
       <section className="bg-white py-16">
         <Container>
-          <h2 className="text-2xl font-bold text-[var(--marian-blue-500)] text-center">Our Mission: A New Dawn for Every Child</h2>
-          <p className="mt-4 text-center text-slate-600 max-w-3xl mx-auto">Our objective is to provide financial and educational aid to the most vulnerable children in society (especially orphans and single-parent children), ensuring they stay enrolled in school. We ensure that lack of fees, books, or essential supplies does not become a barrier to their studies.</p>
-
+            <div className="text-center mb-16">
+            <h2 className="text-4xl font-extrabold text-[var(--marian-blue-600)]">Naya Savera</h2>
+            <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-lg">
+              Our objective is to provide financial and educational aid to the most vulnerable children in society (especially orphans and single-parent children), ensuring they stay enrolled in school. We ensure that lack of fees, books, or essential supplies does not become a barrier to their studies.
+            </p>
+          </div>
+          
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
             <div className="rounded-xl p-6 bg-blue-50 shadow-sm">
               <div className="flex items-center justify-center mb-4">
@@ -155,7 +201,7 @@ export default function Page(): React.ReactElement {
                 </div>
               </div>
               <h4 className="text-lg font-semibold text-[var(--marian-blue-500)] text-center">100% Fee Coverage</h4>
-              <p className="mt-3 text-sm text-slate-600 text-center">Tuition fees are covered for Classes **9th to 12th**. Examination fees are covered for Classes **10th and 12th**.</p>
+              <p className="mt-3 text-sm text-slate-600 text-center">Tuition fees are covered for Classes 9th to 12th. Examination fees are covered for Classes 10th and 12th.</p>
             </div>
 
             <div className="rounded-xl p-6 bg-blue-50 shadow-sm">
@@ -165,7 +211,7 @@ export default function Page(): React.ReactElement {
                 </div>
               </div>
               <h4 className="text-lg font-semibold text-[var(--marian-blue-500)] text-center">Books and Kits</h4>
-              <p className="mt-3 text-sm text-slate-600 text-center">Providing a complete educational material kit to all 100 students every year.</p>
+              <p className="mt-3 text-sm text-slate-600 text-center">Providing a complete educational material kit to all students every year.</p>
             </div>
 
             <div className="rounded-xl p-6 bg-blue-50 shadow-sm">
@@ -175,60 +221,94 @@ export default function Page(): React.ReactElement {
                 </div>
               </div>
               <h4 className="text-lg font-semibold text-[var(--marian-blue-500)] text-center">High Transparency</h4>
-              <p className="mt-3 text-sm text-slate-600 text-center">Registered with NITI Aayog and eligible for CSR funding (80G, 12A certified).</p>
+              <p className="mt-3 text-sm text-slate-600 text-center">Registered with NITI Aayog and eligible for CSR funding (80G, 12A certified CSR-1 Registered).</p>
             </div>
           </div>
         </Container>
       </section>
 
       {/* ================= Problem / Solution ================= */}
-      <main className="py-1">
+      <main className="py-5">
         <Container>
-          <section className="grid lg:grid-cols-2 gap-12 items-start mb-12">
-            <div className="col-span-1">
-              <h2 className="text-2xl font-bold text-[var(--marian-blue-500)] text-center lg:text-left">The Problem We Solve</h2>
-              <p className="mt-4 text-slate-700 leading-relaxed max-w-prose">
-                In poverty, the cost of education often becomes the final breaking point for a family. Single-parent or orphan children,
-                in particular, have no financial safety net — fees, books, and uniforms quickly become unaffordable.
-              </p>
+          <section className="grid lg:grid-cols-2 gap-12 items-start mb-12 mt-12">
+  {/* LEFT SIDE */}
+  <div>
+    <h2 className="text-2xl font-bold text-[var(--marian-blue-500)] text-center lg:text-left mt-5">
+      The Problem We Solve
+    </h2>
 
-              <h3 className="mt-6 text-lg font-semibold text-[var(--navy-800)]">The Struggle: Surviving on Limited Income</h3>
-              <ul className="mt-3 list-disc pl-5 text-slate-700 space-y-2">
-                <li><strong>Zero Savings:</strong> After meeting basic needs, little to nothing is left for savings or unexpected costs.</li>
-                <li><strong>Education Impossible:</strong> Due to limited income, affording annual fees, examination charges, books, and uniform becomes impossible.</li>
-                <li><strong>Our Solution:</strong> NAYA SAVERA removes these expenses so a child is not forced to abandon education.</li>
-              </ul>
-            </div>
+    <p className="mt-4 text-slate-700 leading-relaxed text-justify">
+      In poverty, the cost of education often becomes the final breaking point for a family. 
+      Single-parent or orphan children, in particular, have no financial safety net 
+      fees, books, and uniforms quickly become unaffordable.
+    </p>
 
-            <div className="col-span-1 flex items-center justify-center">
-            <div className="w-full max-w-md bg-white rounded-xl p-6 shadow-lg">
-                <div className="text-slate-500 italic text-center">
+    <h3 className="mt-6 text-lg font-semibold text-[var(--navy-800)]">
+      The Struggle: Surviving on Limited Income
+    </h3>
 
-                <div
-                    className="relative h-96 w-full rounded-xl overflow-hidden"
-                >
-                    {/* Background Image */}
-                    <div
-                    className="absolute inset-0 bg-cover bg-center"
-                    style={{
-                        backgroundImage: "url('/assets/programs/naya-savera.jpg')",
-                    }}
-                    ></div>
+    <ul className="mt-3 list-disc pl-5 text-slate-700 space-y-2 text-justify">
+      <li>
+        <strong>Zero Savings:</strong> After meeting basic needs, little to nothing is left for savings or unexpected costs.
+      </li>
+      <li>
+        <strong>Education Impossible:</strong> Due to limited income, affording annual fees, examination charges, books, and uniforms becomes impossible.
+      </li>
+      <li>
+        <strong>Our Solution:</strong> NAYA SAVERA removes these expenses so a child is not forced to abandon education.
+      </li>
+    </ul>
+  </div>
 
-                    {/* Gradient Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-[var(--marian-blue-700)] to-[var(--marian-blue-500)] opacity-40"></div>
+  {/* RIGHT SIDE */}
+  <div className="flex justify-center">
+    <div className="w-full max-w-md rounded-xl overflow-hidden p-2" >
+      <div className="relative h-96">
+        <img
+          src="/assets/programs/naya-savera.jpg"
+          alt="Naya Savera"
+          className="w-96 h-full object-cover object-top rounded-full object-center m-auto"
+        />
+        <div className="absolute rounded-50% inset-0 opacity-40"></div>
+        <div className="absolute left-[150px] bottom-4 text-white font-bold text-xl m-auto">Naya Savera</div>
+      </div>
 
-                    {/* Content (optional) */}
-                    <div className="relative z-10 flex items-center justify-center h-full text-white font-semibold">
-                    Naya Savera
-                    </div>
-                </div>
+    </div>
+  </div>
+  <div className="grid grid-cols-2 text-md text-slate-800">
 
-                </div>
-            </div>
-            </div>
+    <div className="font-medium bg-[var(--marian-blue-50)] py-3 px-4 border-b border-slate-200">
+      Duration
+    </div>
+    <div className="font-semibold py-3 px-4 border-b border-slate-200">
+      1 Year
+    </div>
 
-          </section>
+    <div className="font-medium bg-[var(--marian-blue-50)] py-3 px-4 border-b border-slate-200">
+      Transparency
+    </div>
+    <div className="font-semibold py-3 px-4 border-b border-slate-200">
+      100% Audit-Ready
+    </div>
+    </div>   
+    <div className="grid grid-cols-2 text-md text-slate-800">
+    <div className="font-medium bg-[var(--marian-blue-50)] py-3 px-4 border-b border-slate-200">
+      Certification
+    </div>
+    <div className="font-semibold py-3 px-4 border-b border-slate-200">
+      80G & 12A, CSR-1
+    </div>
+
+    <div className="font-medium bg-[var(--marian-blue-50)] py-3 px-4 border-b border-slate-200">
+      Partners
+    </div>
+    <div className="font-semibold py-3 px-4 border-b border-slate-200">
+      RM Chemicals Pvt. Ltd.
+    </div>
+
+  </div>
+</section>
+
 
           
 

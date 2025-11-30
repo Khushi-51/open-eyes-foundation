@@ -9,38 +9,38 @@ import "slick-carousel/slick/slick-theme.css";
 
 const awards = [
   {
-    title: "Local NGO Excellence Award",
-    desc: "Recognized for our outstanding Mobile Library initiative and literacy drives.",
+    title: "Honoured by Rotary Chandigarh Shivalik",
+    desc: "The Open Eyes Foundation was honoured by Rotary Chandigarh Shivalik and second Innings association (2019).",
     img: "/assets/awards/award1.jpg",
   },
   {
-    title: "CSR Partnership Award",
+    title: "Hounered by NYKS Chandigarh",
     desc: "The Open Eyes Foundation was honored by Nehru Yuva Kendra Sanghthan, Chandigarh, Government of India, Ministry of Youth Affairs and Sports at the District Youth Convention at RGNIYD for its significant contribution in the social sector on 20th January 2018.",
     img: "/assets/awards/award2.jpg",
   },
   {
-    title: "Education Impact Recognition",
+    title: "Featured in 'Mann Ki Baat' by PM Modi",
     desc: "Awarded for empowering 10,000+ students through reading programs.",
     img: "/assets/awards/award3.png",
   },
   {
-    title: "Community Service Award",
-    desc: "The founder of the Open Eyes Foundation, winner of JIYO DIL SE AWARD SESSION -7 receiving award from Member of Parliament Smt. Kiran kher and Mayor of Chandigarh Mr. Rajesh Kalia at Chandigarh club sector – 1 Chandigarh. (16 March 2019).",
+    title: "Winner of JIYO DIL SE AWARD S-7",
+    desc: "The founder of the Open Eyes Foundation, winner of JIYO DIL SE AWARD SESSION-7 receiving award from Member of Parliament Smt. Kiran kher and Mayor of Chandigarh Mr. Rajesh Kalia at Chandigarh club sector - 1 Chandigarh. (16 March 2019).",
     img: "/assets/awards/award4.png",
   },
   {
-    title: "Innovation in Learning",
-    desc: "For creative education models and child-friendly learning spaces.",
+    title: "Honoured by SBI Chandigarh Circle",
+    desc: "Mr. Sandeep Kumar was honored by the Chief General Manager of Chandigarh Circle, State Bank of India, Mr. Anukool Bhatnagar, for his commendable work (October 2020).",
     img: "/assets/awards/award5.png",
   },
   {
-    title: "Volunteer Spirit Award",
-    desc: "For inspiring a generation of volunteers across regions.",
+    title: "SBI gifted a tempo traveller",
+    desc: "SBI Chairman Mr. Dinesh Kumar Khera commended Open Eyes Foundation, gifting a tempo traveller and books worth Rs. 50,000 at Chandigarh under CSR ( March 2021).",
     img: "/assets/awards/award6.jpg",
   },
   {
-    title: "Humanitarian Impact Award",
-    desc: "Recognized for making education accessible to marginalized children.",
+    title: "Hounered by Mayor of Chandigarh",
+    desc: "The Mayor of Chandigarh, Mr. Divesh Modgil, honored the Open Eyes Foundation for its outstanding work in the field of education in 2018.",
     img: "/assets/awards/award7.png",
   },
 ];
@@ -127,7 +127,7 @@ export default function AwardsCarousel(): React.ReactElement {
                   <h3 className="font-semibold text-lg text-[#FACC15] mb-1">
                     {award.title}
                   </h3>
-                  <p className="text-sm text-gray-200">{award.desc}</p>
+                  <p className="text-sm text-gray-200 text-justify">{award.desc}</p>
                 </div>
               </div>
             </motion.div>
@@ -167,7 +167,7 @@ export default function AwardsCarousel(): React.ReactElement {
                 </div>
                 <div className="text-center mt-6 text-white px-6">
                   <h2 className="text-2xl font-bold">{currentAward.title}</h2>
-                  <p className="text-gray-400 mt-2">{currentAward.desc}</p>
+                  <p className="text-gray-400 mt-2 text-justify">{currentAward.desc}</p>
                   <span className="bg-[#FACC15] text-xs px-3 py-1 mt-3 inline-block rounded-full font-semibold tracking-wide text-black">
                     Award
                   </span>

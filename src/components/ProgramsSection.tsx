@@ -5,32 +5,32 @@ import { ArrowRight } from "lucide-react";
 const programs = [
   {
     title: "Raddi Se Shiksha",
-    desc: "Collecting used books and redistributing to students.",
+    desc: "Empowering education by reusing educational resources",
     img: "/assets/programs/raddi-se-shiksha.png",
   },
   {
     title: "Mobile Library (Gyaan Ka Safar)",
-    desc: "Mobile libraries bringing books to neighborhoods and schools.",
+    desc: "Read : Donate : Empower",
     img: "/assets/programs/gyaan-ka-safar.jpg",
   },
   {
     title: "Library of Honesty",
-    desc: "Community book boxes and self-service lending points.",
+    desc: "Read with trust, return with honesty",
     img: "/assets/programs/library-of-honesty.jpg",
   },
   {
     title: "Naya Savera",
-    desc: "Scholarships and support for vulnerable children.",
+    desc: "Educational scholarship for orphaned and single parent children",
     img: "/assets/programs/naya-savera.jpg",
   },
   {
     title: "Mission Literacy",
-    desc: "Awareness drives and reading programs.",
+    desc: "Educational kits for orphaned, single parent and needy children",
     img: "/assets/programs/mission-literacy.jpg",
   },
   {
     title: "Khushiyon ki Potli",
-    desc: "Happiness kits and outreach events for children.",
+    desc: "Celebrate every occasion with purpose.",
     img: "/assets/programs/khushiyon-ki-potli.jpg",
   },
 ];

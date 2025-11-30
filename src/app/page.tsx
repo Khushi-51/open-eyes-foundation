@@ -105,7 +105,7 @@ export default function HomePage() {
       <NewsSection />
       <ProgramsSection />
       <AwardsNewsSection />
-      <DonatePreviewSection />
+   
       <TeamContactSection />
 
       {/* Share Buttons (clean JSX, no broken attributes) */}
