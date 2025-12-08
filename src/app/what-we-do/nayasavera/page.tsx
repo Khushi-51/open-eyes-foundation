@@ -23,7 +23,7 @@ type Step = {
   title: string;
   subtitle?: string;
   icon: React.ReactNode;
-  img: React.ReactNode;
+  img: string;
 };
 
 const STEPS: Step[] = [
@@ -39,21 +39,21 @@ const STEPS: Step[] = [
     title: "Home Visit & Verification", 
     subtitle: "Project coordinator verification", 
     icon: <Home size={18} />,
-    img: "/assets/sop/step2.png"
+    img: "/assets/projects/naya-savera/s-2.png"
   },
   { 
     id: 3, 
     title: "Direct Payment", 
     subtitle: "Fees paid directly to school/college", 
     icon: <CreditCard size={18} />,
-    img: "/assets/sop/step3.png"
+    img: "/assets/projects/naya-savera/s-3.png"
   },
   { 
     id: 4, 
     title: "Quarterly Monitoring", 
     subtitle: "Academic progress & material checks", 
     icon: <Clock size={18} />,
-    img: "/assets/sop/step4.png"
+    img: "/assets/projects/naya-savera/s-4.png"
   },
 ];
 
@@ -101,7 +101,7 @@ function StepCircle({ step }: { step: Step }) {
               alt={step.title}
               width={144}
               height={144}
-              className="object-contain rounded-full"
+              className="w-full h-full p-1 object-cover"
             />
           </div>
         </div>
@@ -317,14 +317,12 @@ export default function Page(): React.ReactElement {
             <h2 className="text-2xl font-bold text-[var(--navy-900)]">How We Provide Aid (Our SOP)</h2>
 
             {/* Desktop flow: horizontal steps with curved connector */}
-            <div className="hidden lg:block mt-10 relative">
+            <div className="hidden lg:block mt-10 relative overflow-visible">
               <div className="absolute inset-0 top-12 pointer-events-none">
-                {/* big gentle curve */}
-                <svg className="w-full h-32" viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden>
-                  <path d="M60 60 C300 0, 600 120, 1140 60" stroke="var(--light-green-200)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" opacity="0.10" fill="none" />
-                </svg>
-              </div>
-
+              <svg className="w-full h-32" viewBox="0 0 1200 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M60 60 C300 0, 600 120, 1140 60" stroke="var(--light-green-200)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" opacity="0.10" fill="none" />
+              </svg>
+            </div>
               <div className="relative z-10 flex items-center justify-between gap-6">
                 {STEPS.map((s, idx) => (
                   <div key={s.id} className="flex-1 flex flex-col items-center">

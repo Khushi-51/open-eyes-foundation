@@ -18,15 +18,35 @@ type Step = {
   title: string;
   subtitle?: string;
   icon: React.ReactNode;
+  img: string;
 };
 
-const STEPS: Step[] = [
-  { id: 1, title: "Procurement", subtitle: "Purchase materials & kits", icon: <Users size={20} /> },
-  { id: 2, title: "Enrolment", subtitle: "Identify & register students", icon: <UserCheck size={20} /> },
-  { id: 3, title: "Distribution", subtitle: "Provide kits & fee support", icon: <CreditCard size={20} /> },
-  { id: 4, title: "Monitoring", subtitle: "Quarterly checks & audits", icon: <Clock size={20} /> },
-];
+type KitItem = {
+  name: string;
+  quantity?: string | number;
+  cost: number;
+};
 
+type Props = {
+  totalFundingRequired?: number;
+  kitItems?: KitItem[];
+  onDonate?: () => void;
+};
+const STEPS: Step[] = [
+  { id: 1, title: "Procurement", subtitle: "Purchase materials & kits", icon: <Users size={20} />,img: "/assets/projects/mission-literacy/s-1.png" },
+  { id: 2, title: "Enrolment", subtitle: "Identify & register students", icon: <UserCheck size={20} />,img: "/assets/projects/mission-literacy/s-2.png" },
+  { id: 3, title: "Distribution", subtitle: "Provide kits & fee support", icon: <CreditCard size={20} />,img: "/assets/projects/mission-literacy/s-3.png" },
+  { id: 4, title: "Monitoring", subtitle: "Quarterly checks & audits", icon: <Clock size={20} />,img: "/assets/projects/mission-literacy/s-4.png" },
+];
+const defaultKit: KitItem[] = [
+  { name: "School Bag", quantity: 1, cost: 450 },
+  { name: "Registers (12)", quantity: 12, cost: 1020 },
+  { name: "Pens (10)", quantity: 10, cost: 100 },
+  { name: "Geometry Box", quantity: 1, cost: 100 },
+  { name: "Pencils (5)", quantity: 5, cost: 25 },
+  { name: "Erasers (5)", quantity: 5, cost: 25 },
+  { name: "Sharpeners (5)", quantity: 5, cost: 25 },
+];
 function Container({ children }: { children: React.ReactNode }) {
   return <div className="max-w-6xl mx-auto px-6">{children}</div>;
 }
@@ -35,24 +55,44 @@ function StepCircle({ step }: { step: Step }) {
   return (
     <div className="flex flex-col items-center w-56">
       <div className="relative">
-        <div className="w-40 h-40 rounded-full border-4 border-dashed border-[var(--light-green-200)] flex items-center justify-center bg-white/5">
-          <div className="w-28 h-28 rounded-full bg-[var(--light-green-200)]/8 flex items-center justify-center text-[var(--light-green-200)]">
-            {step.icon}
+        {/* Outer Dashed Circle */}
+        <div className="w-40 h-40 rounded-full border-[4px] border-dashed border-[var(--light-green-200)] flex items-center justify-center bg-white shadow-sm">
+          
+          {/* Inner Soft Circle */}
+          <div className="w-36 h-36 rounded-full bg-[var(--light-green-200)]/10 flex items-center justify-center overflow-hidden">
+
+            {/* FIX: IMAGE SHOULD RENDER PROPERLY */}
+            <Image
+              src={step.img}
+              alt={step.title}
+              width={144}
+              height={144}
+              className="object-contain p-2 rounded-full"
+            />
           </div>
         </div>
       </div>
 
+      {/* Text under the circle */}
       <div className="mt-4 text-center">
-        <div className="text-sm font-semibold text-white">{step.title}</div>
-        {step.subtitle && <div className="text-xs text-white/80 mt-1">{step.subtitle}</div>}
+        <div className="text-sm font-semibold text-[var(--navy-800)]">{step.title}</div>
+        {step.subtitle && (
+          <div className="text-xs text-slate-500 mt-1">{step.subtitle}</div>
+        )}
       </div>
     </div>
   );
 }
 
-export default function Page(): React.ReactElement {
+export default function Page({
+  totalFundingRequired = 2462900,
+  kitItems = defaultKit,
+  onDonate,
+}: Props): React.ReactElement {
+
+  const kitTotal = kitItems.reduce((s, it) => s + it.cost, 0);
   return (
-    <div className="min-h-screen bg-[var(--bg-soft)] text-slate-800 antialiased">
+    <div className="min-h-screen  text-slate-800 antialiased">
       <Navbar />
 
       {/* HERO */}
@@ -100,7 +140,7 @@ export default function Page(): React.ReactElement {
 
       {/* MISSION + PROBLEM */}
       <section className="bg-[var(--bg-soft)] py-20">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-extrabold text-[var(--marian-blue-600)]">Mission Literacy</h2>
             <p className="mt-4 text-slate-600 max-w-3xl mx-auto text-lg">
@@ -167,56 +207,11 @@ export default function Page(): React.ReactElement {
         </div>
       </section>
 
-      {/* KIT BREAKDOWN + FUNDING */}
-      <section className="py-12">
-        <Container>
-          <div className="mx-auto max-w-4xl bg-white rounded-xl p-8 shadow-lg">
-            <div className="flex flex-col lg:flex-row items-start gap-6">
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold text-[var(--navy-900)]">Complete Academic Kit — Example Components</h3>
-                <p className="mt-2 text-slate-700">Every kit is designed to cover a full academic year for Classes 9–12.</p>
-                <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 text-slate-700">
-                  <li className="flex justify-between"><span>School Bag</span><span className="font-semibold">₹450</span></li>
-                  <li className="flex justify-between"><span>12 Registers</span><span className="font-semibold">₹1,020</span></li>
-                  <li className="flex justify-between"><span>10 Pens</span><span className="font-semibold">₹100</span></li>
-                  <li className="flex justify-between"><span>Geometry Box</span><span className="font-semibold">₹100</span></li>
-                  <li className="flex justify-between"><span>5 Pencils</span><span className="font-semibold">₹25</span></li>
-                  <li className="flex justify-between"><span>5 Erasers</span><span className="font-semibold">₹25</span></li>
-                  <li className="flex justify-between"><span>5 Sharpeners</span><span className="font-semibold">₹25</span></li>
-                </ul>
-                <div className="mt-6">
-                  <div className="text-sm text-slate-600">Estimated kit total</div>
-                  <div className="text-3xl font-extrabold mt-1">₹1,745</div>
-                </div>
-                <div className="mt-6">
-                  <h4 className="text-sm font-semibold">Total Funding Required</h4>
-                  <div className="text-4xl lg:text-5xl font-extrabold text-[var(--marian-blue-500)] mt-2">₹24,62,900</div>
-                  <p className="mt-2 text-sm text-slate-600">Covers procurement, distribution, monitoring and admin for the project period.</p>
-                </div>
-                <div className="mt-6 flex gap-3">
-                  <Link href="/donate-now" className="inline-block bg-[#2fb86f] hover:bg-[#28a65f] text-white font-semibold px-6 py-3 rounded-full shadow">Donate Now</Link>
-                  <Link href="/contact" className="inline-block border border-slate-200 px-6 py-3 rounded-full">Contact Us</Link>
-                </div>
-              </div>
-
-              <div className="w-full lg:w-80 bg-[var(--marian-blue-50)] rounded-xl p-4">
-                <div className="text-sm font-semibold">Project Highlights</div>
-                <div className="mt-4 space-y-3">
-                  <div className="flex items-center justify-between text-sm"><span>Past beneficiaries</span><strong>5000+</strong></div>
-                  <div className="flex items-center justify-between text-sm"><span>Years active</span><strong>Since 2017</strong></div>
-                  <div className="flex items-center justify-between text-sm"><span>Partners</span><strong>7+</strong></div>
-                  <div className="flex items-center justify-between text-sm"><span>Audit Ready</span><strong>Yes</strong></div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
 
       {/* SOP / FLOW */}
-      <section className="bg-white py-16">
+      <section className="bg-white py-16 mx-auto max-w-6xl">
         <Container>
-          <h2 className="text-2xl font-bold text-center text-[var(--navy-900)] mb-12">
+          <h2 className="text-2xl font-bold text-[var(--navy-900)] mb-12">
             How We Provide Aid (Our SOP)
           </h2>
 
@@ -228,15 +223,15 @@ export default function Page(): React.ReactElement {
             </div>
             <div>
               <div className="text-xl font-bold text-[var(--marian-blue-500)]">90%</div>
-              <div className="mt-1 text-sm text-slate-600">Success Rate — Guarantee of passing annual exams</div>
+              <div className="mt-1 text-sm text-slate-600">Success Rate - Guarantee of passing annual exams</div>
             </div>
             <div>
               <div className="text-xl font-bold text-[var(--marian-blue-500)]">100%</div>
-              <div className="mt-1 text-sm text-slate-600">Transparency — Strict SOP & Audit Checklist</div>
+              <div className="mt-1 text-sm text-slate-600">Transparency - Strict SOP & Audit Checklist</div>
             </div>
             <div>
               <div className="text-xl font-bold text-[var(--marian-blue-500)]">12 Months</div>
-              <div className="mt-1 text-sm text-slate-600">Project Duration — June 2024 to April 2025</div>
+              <div className="mt-1 text-sm text-slate-600">Project Duration - June 2024 to April 2025</div>
             </div>
           </div>
 
@@ -254,7 +249,7 @@ export default function Page(): React.ReactElement {
                   <StepCircle step={s} />
                   {idx === 1 && (
                     <div className="mt-4 text-center text-sm text-slate-600 max-w-[240px]">
-                      Verification, home visit and local assessment
+             
                     </div>
                   )}
                 </div>
@@ -285,17 +280,95 @@ export default function Page(): React.ReactElement {
         </Container>
       </section>
 
-      {/* IMPACT + CTA */}
-      <section className="py-16">
-        <Container>
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-2xl font-bold text-[var(--navy-900)]">Our Impact</h2>
-            <p className="mt-2 text-slate-600">Glimpses of past activities, beneficiaries and institutional partnerships.</p>
-          </div>
-        </Container>
-      </section>
+   
 
-      <SiteFooter />
+  
+
+<div className="bg-white p-6">
+       <section className="max-w-6xl mx-auto rounded-1xl mt-12">
+        <div className="md:flex md:items-center md:justify-equally gap-64">
+          <div>
+            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900">
+              Financial Need & Transparency
+            </h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Clear breakdown of the funding required to run{" "}
+              <span className="font-medium">Mission Literacy</span> and the academic kit contents.
+            </p>
+          </div>
+
+          <div className="mt-4 md:mt-0">
+            <div className="bg-gradient-to-r from-indigo-600 to-indigo-500 text-white px-14 py-3 rounded-lg shadow-lg">
+              <p className="text-xs uppercase">Total Funding Required</p>
+              <p className="text-xl font-bold">
+                ₹{totalFundingRequired.toLocaleString("en-IN")}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Kit Table */}
+        <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="col-span-2 bg-gray-50 p-5 rounded-xl">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-medium text-gray-800">Academic Kit Details</h3>
+              <p className="text-sm text-gray-600">
+                Cost per kit: <span className="font-semibold">₹{kitTotal}</span>
+              </p>
+            </div>
+
+            <div className="mt-4 overflow-x-auto">
+              <table className="w-full text-left text-sm">
+                <thead>
+                  <tr className="text-gray-600">
+                    <th className="py-2">Item</th>
+                    <th className="py-2">Quantity</th>
+                    <th className="py-2">Cost (₹)</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {kitItems.map((it, idx) => (
+                    <tr key={idx} className="border-t">
+                      <td className="py-3 text-gray-800">{it.name}</td>
+                      <td className="py-3 text-gray-700">{it.quantity ?? "—"}</td>
+                      <td className="py-3 font-medium">{it.cost}</td>
+                    </tr>
+                  ))}
+
+                  <tr className="border-t bg-white">
+                    <td className="py-3 font-semibold">Total</td>
+                    <td />
+                    <td className="py-3 font-semibold">{kitTotal}</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          {/* Donation CTA */}
+          <aside className="bg-white p-5 rounded-xl shadow-sm flex flex-col gap-4">
+            <h4 className="text-sm text-gray-600">Transparency</h4>
+            <p className="text-sm text-gray-700">
+              Every rupee goes directly to academic kits & fee support. Full audit reports shared.
+            </p>
+
+            <button
+              onClick={onDonate}
+              className="w-full py-2 rounded-lg bg-indigo-600 text-white font-medium hover:opacity-95 transition"
+            >
+              Donate Now
+            </button>
+
+            {/* <p className="text-xs text-gray-500">
+              Tip: Link this to Razorpay / Instamojo / your donation page.
+            </p> */}
+          </aside>
+        </div>
+      </section>
+</div>
+    <SiteFooter />
     </div>
   );
 }
