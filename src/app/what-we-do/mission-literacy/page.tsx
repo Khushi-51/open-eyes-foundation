@@ -27,11 +27,6 @@ type KitItem = {
   cost: number;
 };
 
-type Props = {
-  totalFundingRequired?: number;
-  kitItems?: KitItem[];
-  onDonate?: () => void;
-};
 const STEPS: Step[] = [
   { id: 1, title: "Procurement", subtitle: "Purchase materials & kits", icon: <Users size={20} />,img: "/assets/projects/mission-literacy/s-1.png" },
   { id: 2, title: "Enrolment", subtitle: "Identify & register students", icon: <UserCheck size={20} />,img: "/assets/projects/mission-literacy/s-2.png" },
@@ -84,13 +79,12 @@ function StepCircle({ step }: { step: Step }) {
   );
 }
 
-export default function Page({
-  totalFundingRequired = 2462900,
-  kitItems = defaultKit,
-  onDonate,
-}: Props): React.ReactElement {
-
+export default function Page() {
+  const totalFundingRequired = 2462900;
+  const kitItems = defaultKit;
+  
   const kitTotal = kitItems.reduce((s, it) => s + it.cost, 0);
+
   return (
     <div className="min-h-screen  text-slate-800 antialiased">
       <Navbar />
@@ -355,7 +349,7 @@ export default function Page({
             </p>
 
             <button
-              onClick={onDonate}
+              onClick={() => window.location.href = "/donate-now"}
               className="w-full py-2 rounded-lg bg-indigo-600 text-white font-medium hover:opacity-95 transition"
             >
               Donate Now
