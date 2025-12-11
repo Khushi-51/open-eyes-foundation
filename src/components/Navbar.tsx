@@ -65,7 +65,12 @@ export default function Navbar() {
                 <span className="cursor-pointer hover:text-blue-700 transition-colors">
                   About Us
                 </span>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 border border-gray-100">
+
+                <div
+                  className="absolute left-0 top-full bg-white shadow-lg rounded-md w-48 border border-gray-100 
+                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            transition-all duration-200 pointer-events-auto"
+                >
                   <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
                     Our Organization
                   </Link>
@@ -75,6 +80,7 @@ export default function Navbar() {
                 </div>
               </div>
 
+
               <NavLink href="/what-we-do">What We Do</NavLink>
               <NavLink href="/achievements">Achievements</NavLink>
 
@@ -82,7 +88,12 @@ export default function Navbar() {
                 <span className="cursor-pointer hover:text-blue-700 transition-colors">
                   Get Involved
                 </span>
-                <div className="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 w-48 border border-gray-100">
+
+                <div
+                  className="absolute left-0 top-full bg-white shadow-lg rounded-md w-48 border border-gray-100
+                            opacity-0 invisible group-hover:opacity-100 group-hover:visible 
+                            transition-all duration-200 pointer-events-auto"
+                >
                   <Link href="/get-involved" className="block px-4 py-2 hover:bg-gray-100">
                     Overview
                   </Link>
@@ -97,6 +108,7 @@ export default function Navbar() {
                   </Link>
                 </div>
               </div>
+
 
               <NavLink href="/contact">Contact Us</NavLink>
 

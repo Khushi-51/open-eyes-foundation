@@ -206,7 +206,7 @@ const impactStats: ImpactStat[] = [
                 style={{ background: "var(--light-green-200)" }}
               >
                 <tr>
-                  <th className="px-4 py-3 text-left text-sm font-semibold">
+                  <th className="px-4 py-3 text-center text-sm font-semibold w-44">
                     Item
                   </th>
                   <th className="px-4 py-3 text-center text-sm font-semibold">
