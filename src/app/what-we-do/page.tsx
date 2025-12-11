@@ -5,13 +5,44 @@ import SiteFooter from "@/components/SiteFooter"
 import Image from "next/image"
 
 const programs = [
-  {title: "Raddi Se Shiksha", desc: "Collecting used books and redistributing to students.", img: "/assets/programs/raddi-se-shiksha.png"},
-  {title: "Mobile Library (Gyaan Ka Safar)", desc: "Mobile libraries bringing books to neighborhoods and schools.", img: "/assets/programs/gyaan-ka-safar.jpg"},
-  {title: "Library of Honesty", desc: "Community book boxes and self-service lending points.", img: "/assets/programs/Library-of-honesty.jpg"},
-  {title: "Naya Savera", desc: "Scholarships and support for vulnerable children.", img: "/assets/programs/naya-savera.jpg"},
-  {title: "Mission Literacy", desc: "Awareness drives and reading programs.", img: "/assets/programs/mission-literacy.jpg"},
-  {title: "Khushiyon ki Potli", desc: "Happiness kits and outreach events for children.", img: "/assets/programs/khushiyon-ki-potli.jpg"},
+  {
+    title: "Raddi Se Shiksha",
+    desc: "Collecting used books and redistributing to students.",
+    img: "/assets/programs/raddi-se-shiksha.png",
+    link: "/what-we-do/raddi-se-shiksha",
+  },
+  {
+    title: "Mobile Library (Gyaan Ka Safar)",
+    desc: "Mobile libraries bringing books to neighborhoods and schools.",
+    img: "/assets/programs/gyaan-ka-safar.jpg",
+    link: "/what-we-do/gyaan-ka-safar",
+  },
+  {
+    title: "Library of Honesty",
+    desc: "Community book boxes and self-service lending points.",
+    img: "/assets/programs/Library-of-honesty.jpg",
+    link: "/what-we-do/library-of-honesty",
+  },
+  {
+    title: "Naya Savera",
+    desc: "Scholarships and support for vulnerable children.",
+    img: "/assets/programs/naya-savera.jpg",
+    link: "/what-we-do/naya-savera",
+  },
+  {
+    title: "Mission Literacy",
+    desc: "Awareness drives and reading programs.",
+    img: "/assets/programs/mission-literacy.jpg",
+    link: "/what-we-do/mission-literacy",
+  },
+  {
+    title: "Khushiyon ki Potli",
+    desc: "Happiness kits and outreach events for children.",
+    img: "/assets/programs/khushiyon-ki-potli.jpg",
+    link: "/what-we-do/khushiyon-ki-potli",
+  },
 ]
+
 
 export default function WhatWeDoPage(): React.ReactElement {
   return (
@@ -36,7 +67,7 @@ export default function WhatWeDoPage(): React.ReactElement {
                 <Image src={p.img} alt={p.title} width={600} height={360} className="w-full h-85 object-contain rounded" />
                 <h3 className="mt-3 font-semibold text-[#003366] px-2">{p.title}</h3>
                 <p className="text-sm mt-2 text-[#374151] px-2">{p.desc}</p>
-                <div className="mt-3 p-2"><a href="\what-we-do\nayasavera" target="_blank" rel="noopener noreferrer" className="text-[#0056B3]">Learn more →</a></div>
+                <div className="mt-3 p-2"><a href={p.link} target="_blank" rel="noopener noreferrer" className="text-[#0056B3]">Learn more →</a></div>
               </article>
             ))}
           </div>
