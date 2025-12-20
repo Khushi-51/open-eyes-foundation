@@ -13,7 +13,7 @@ const videos = [
 
 export default function FeaturedVideos() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-white mx-2">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
@@ -32,7 +32,7 @@ export default function FeaturedVideos() {
           {/* BIG FEATURED VIDEO */}
           <div className="md:row-span-2 overflow-hidden shadow-lg">
             <iframe
-              className="w-full h-[625px]"
+              className="w-full md-h-[625px] h-[300px]"
               src={`https://www.youtube-nocookie.com/embed/${videos[0].id}?rel=0`}
               title={videos[0].title}
               loading="lazy"

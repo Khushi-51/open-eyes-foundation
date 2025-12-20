@@ -45,7 +45,7 @@ const itemMeta: Record<string, { name: string; requiredLabel: string; priceLabel
   pencil: { name: "Pencil", requiredLabel: "1200 Students", priceLabel: "₹80 / Pencil" },
   sharpener: { name: "Sharpener", requiredLabel: "600 Students", priceLabel: "₹40 / Sharpener" },
   eraser: { name: "Eraser", requiredLabel: "700 Students", priceLabel: "₹60 / Eraser" },
-  geometry: { name: "Geometry", requiredLabel: "700 Students", priceLabel: "₹60 / Box" }
+  geometry: { name: "Geometry Box", requiredLabel: "700 Students", priceLabel: "₹60 / Box" }
 };
 
 const programs: ProgramItem[] = [
@@ -195,9 +195,7 @@ const impactStats: ImpactStat[] = [
 
           {/* decorative geometry box (subtle) */}
           <div className="pointer-events-none absolute -top-8 -right-8 opacity-10 hidden sm:block">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="10" y="10" width="100" height="100" rx="16" transform="rotate(15 60 60)" fill="var(--light-green-200)" />
-            </svg>
+           
           </div>
           <div className="overflow-x-auto">
             <table className="min-w-full divide-y divide-gray-200">

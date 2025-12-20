@@ -1,6 +1,6 @@
 "use client"
 import { useEffect } from "react"
-
+import { Facebook, Instagram, Twitter, Linkedin, Youtube } from "lucide-react";
 import Navbar from "@/components/Navbar"
 import HeroSection from "@/components/HeroSection"
 import MissionSection from "@/components/MissionSection"
@@ -15,56 +15,6 @@ import OurMembers from "@/components/OurMembers"
 
 // scrollToHash will run on client after the page mounts (moved into component)
 
-const donationItems = [
-  {
-    itemName: "School Bag",
-    itemImage: "/images/bag.jpg",
-    costPerItem: 500,
-    totalGoal: 300,
-    totalProjectGoal: 150000,
-    raisedAmount: 105000,
-  },
-  {
-    itemName: "Notebook",
-    itemImage: "/images/notebook.png",
-    costPerItem: 50,
-    totalGoal: 1000,
-    totalProjectGoal: 50000,
-    raisedAmount: 35000,
-  },
-  {
-    itemName: "Pen",
-    itemImage: "/images/pen.png",
-    costPerItem: 10,
-    totalGoal: 1000,
-    totalProjectGoal: 10000,
-    raisedAmount: 7000,
-  },
-  {
-    itemName: "Pencil",
-    itemImage: "/images/pencil.jpg",
-    costPerItem: 5,
-    totalGoal: 1000,
-    totalProjectGoal: 5000,
-    raisedAmount: 3500,
-  },
-  {
-    itemName: "Sharpener",
-    itemImage: "/images/sharpener.png",
-    costPerItem: 5,
-    totalGoal: 500,
-    totalProjectGoal: 2500,
-    raisedAmount: 1500,
-  },
-  {
-    itemName: "Eraser",
-    itemImage: "/images/eraser.jpg",
-    costPerItem: 5,
-    totalGoal: 500,
-    totalProjectGoal: 2500,
-    raisedAmount: 1000,
-  },
-]
 
 export default function HomePage() {
   useEffect(() => {
@@ -109,31 +59,25 @@ export default function HomePage() {
       <OurMembers />
 
       {/* Share Buttons (clean JSX, no broken attributes) */}
-      <div className="fixed bottom-4 right-4 flex flex-col gap-3 z-50">
-        {[
-          { href: "https://www.facebook.com/share/1KHE9BSnvp/", icon: "facebook_32.png", alt: "Facebook" },
-          { href: "https://www.instagram.com/open_eyes_foundation_ngo", icon: "instagram_32.png", alt: "Instagram" },
-          { href: "https://www.twitter.com/openeyesfdnchd", icon: "twitter_32.png", alt: "Twitter" },
-          { href: "https://www.linkedin.com/in/open-eyes-foundation-a683651a1", icon: "linkedin_32.png", alt: "LinkedIn" },
-          { href: "https://www.youtube.com/@openeyesfoundationngo", icon: "youtube_32.png", alt: "Youtube" },
-        ].map((s, i) => (
-          <a
-            key={i}
-            href={s.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-transform hover:scale-110"
-          >
-            <img
-              src={`https://ws.sharethis.com/images/2017/${s.icon}`}
-              alt={s.alt}
-              width={32}
-              height={32}
-              className="shadow-md rounded-full"
-            />
-          </a>
-        ))}
-      </div>
+   <div className="fixed bottom-4 right-4 flex flex-col gap-3 z-50">
+  {[
+    { href: "https://www.facebook.com/share/1KHE9BSnvp/", icon: Facebook },
+    { href: "https://www.instagram.com/open_eyes_foundation_ngo", icon: Instagram },
+    { href: "https://www.twitter.com/openeyesfdnchd", icon: Twitter },
+    { href: "https://www.linkedin.com/in/open-eyes-foundation-a683651a1", icon: Linkedin },
+    { href: "https://www.youtube.com/@openeyesfoundationngo", icon: Youtube },
+  ].map((s, i) => (
+    <a
+      key={i}
+      href={s.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-white p-2 rounded-full shadow-md hover:scale-110 transition-transform"
+    >
+      <s.icon size={20} className="text-gray-700" />
+    </a>
+  ))}
+</div>
 
       {/* Footer */}
       <SiteFooter />
