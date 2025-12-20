@@ -6,12 +6,12 @@ import HeroSection from "@/components/HeroSection"
 import MissionSection from "@/components/MissionSection"
 import ProgramsSection from "@/components/ProgramsSection"
 import AwardsNewsSection from "@/components/AwardsNewsSection"
-import TestimonialsGallerySection from "@/components/TestimonialsGallerySection"
-import DonatePreviewSection from "@/components/DonatePreviewSection"
-import TeamContactSection from "@/components/TeamContactSection"
 import SiteFooter from "@/components/SiteFooter"
 import DonationTable from "@/components/DonationTable"
 import NewsSection from "@/components/NewsSection"
+import FeaturedVideo from "@/components/FeaturedVideos"
+import OurMembers from "@/components/OurMembers"
+
 
 // scrollToHash will run on client after the page mounts (moved into component)
 
@@ -105,8 +105,8 @@ export default function HomePage() {
       <NewsSection />
       <ProgramsSection />
       <AwardsNewsSection />
-   
-      <TeamContactSection />
+      <FeaturedVideo />
+      <OurMembers />
 
       {/* Share Buttons (clean JSX, no broken attributes) */}
       <div className="fixed bottom-4 right-4 flex flex-col gap-3 z-50">
