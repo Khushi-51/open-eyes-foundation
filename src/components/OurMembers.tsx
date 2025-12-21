@@ -6,31 +6,31 @@ const members = [
   {
     name: "Aarav Sharma",
     role: "Donor",
-    image: "/members/m1.jpg",
+    image: "/assets/team/aanchal-sharma.jpg",
     description: "Supporting education initiatives for underprivileged children.",
   },
   {
     name: "Neha Verma",
     role: "Volunteer",
-    image: "/members/m2.jpg",
+    image: "/assets/team/naina.jpg",
     description: "Actively involved in healthcare awareness camps.",
   },
   {
     name: "Rohan Mehta",
     role: "Contributor",
-    image: "/members/m3.jpg",
+    image: "/assets/team/mohammad-aslam.jpg",
     description: "Helping fund community development programs.",
   },
   {
     name: "Priya Singh",
     role: "Donor",
-    image: "/members/m4.jpg",
+    image: "/assets/team/chandni.jpg",
     description: "Believes education is the strongest tool for change.",
   },
   {
     name: "Kunal Jain",
     role: "Volunteer",
-    image: "/members/m5.jpg",
+    image: "/assets/team/nisha.jpeg",
     description: "Works closely with children in rural areas.",
   },
 ];
@@ -45,7 +45,7 @@ export default function OurMembers() {
         {/* Heading */}
         <div className="mb-6">
           <h3 className=" text-center text-2xl font-bold text-gray-900">
-            Our Contributors
+            Our Contributers
           </h3>
           <p className="text-center text-gray-600 text-sm mt-1">
             People who make our mission possible
@@ -71,16 +71,17 @@ export default function OurMembers() {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-20 h-20 rounded-full object-cover mb-3"
+                      className="w-40 h-40 rounded-full object-cover mb-3"
                     />
-                    <h4 className="font-semibold text-gray-900 text-sm">
-                      {member.name}
-                    </h4>
+                    
                     <p className="text-xs text-emerald-600">
                       {member.role}
                     </p>
+                    <h4 className="font-semibold text-gray-900 text-sm">
+                      {member.name}
+                    </h4>
                   </div>
-
+                  
                   {/* BACK */}
                   <div className="absolute inset-0 bg-emerald-600 text-white rounded-2xl shadow-md backface-hidden rotate-y-180 flex items-center justify-center p-4 text-center text-sm">
                     {member.description}

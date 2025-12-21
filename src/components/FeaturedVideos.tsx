@@ -1,13 +1,13 @@
 "use client";
 
 const videos = [
-  { id: "-kRZK7oTktM", title: "Story of Bookman - Sandeep Kumar" },
+  // { id: "-kRZK7oTktM", title: "Story of Bookman - Sandeep Kumar" },
   { id: "zolgmKrhOco", title: "Raddi Se Shiksha" },
-  { id: "QNV_CeimuUY", title: "Mann Ki Baat by PM Narendra Modi" },
+  // { id: "QNV_CeimuUY", title: "Mann Ki Baat by PM Narendra Modi" },
   { id: "pHtVHYgWfhY", title: "Sandeep kumar Bookman praised" },
   { id: "5vudT28wvf8", title: "Gyaan Ka Safar Mobile Library" },
   { id: "LH3-bsgcI9c", title: "Mission Literacy" },
-  { id: "jBUNwSzq-hw", title: "Library Of Honesty" },
+  // { id: "jBUNwSzq-hw", title: "Library Of Honesty" },
 ];
 
 
@@ -30,7 +30,7 @@ export default function FeaturedVideos() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
           {/* BIG FEATURED VIDEO */}
-          <div className="md:row-span-2 overflow-hidden shadow-lg">
+          {/* <div className="md:row-span-2 overflow-hidden shadow-lg">
             <iframe
               className="w-full md:h-[625px] h-[300px]"
               src={`https://www.youtube-nocookie.com/embed/${videos[0].id}?rel=0`}
@@ -42,16 +42,16 @@ export default function FeaturedVideos() {
             <div className="p-2 bg-[#FACC15]">
               <h3 className="font-semibold">{videos[0].title}</h3>
             </div>
-          </div>
+          </div> */}
 
           {/* OTHER 6 VIDEOS */}
-          {videos.slice(1).map((video, index) => (
+          {videos.slice(0).map((video, index) => (
             <div
               key={index}
               className="overflow-hidden shadow-md bg-[#FACC15]"
             >
               <iframe
-                className="w-full h-[280px]"
+                className="w-full h-[300px]"
                 src={`https://www.youtube-nocookie.com/embed/${video.id}?rel=0`}
                 title={video.title}
                 loading="lazy"
@@ -61,11 +61,23 @@ export default function FeaturedVideos() {
               <div className="p-2 bg-[#FACC15]">
                 <p className="text-sm font-medium">{video.title}</p>
               </div>
+             
             </div>
+
+          
+
           ))}
+          
 
         </div>
       </div>
+      <button
+        className="mt-8 mx-auto block px-6 py-2 bg-[#003366] text-white font-semibold rounded-md hover:bg-[#002244] transition"
+        onClick={() => window.open("https://www.youtube.com/@OpenEyesFoundation", "_blank")}
+      >
+        View More
+      </button>
+          
     </section>
   );
 }
