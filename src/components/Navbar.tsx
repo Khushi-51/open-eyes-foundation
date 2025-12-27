@@ -197,11 +197,11 @@ export default function Navbar() {
 
       {/* Achievements */}
       <Link
-        href="/achievements"
+        href="/Gallery"
         onClick={() => setMobileMenuOpen(false)}
         className="py-2 hover:text-blue-700"
       >
-        Achievements
+        Gallery
       </Link>
 
       {/* Get Involved Dropdown */}

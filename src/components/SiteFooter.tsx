@@ -36,9 +36,21 @@ export default function Footer(): React.ReactElement {
             Get Involved
           </h3>
           <ul className="space-y-2 text-sm">
-            <li>Join as a Member</li>
-            <li>Join as a Volunteer</li>
-            <li>Join as an Intern</li>
+            <li>
+    <a href="/join-as-a-member" className="hover:text-[var(--marian-blue)]">
+      Join as a Member
+    </a>
+  </li>
+  <li>
+    <a href="/volunteer" className="hover:text-[var(--marian-blue)]">
+      Join as a Volunteer
+    </a>
+  </li>
+  <li>
+    <a href="/join-as-an-intern" className="hover:text-[var(--marian-blue)]">
+      Join as an Intern
+    </a>
+  </li>
            
           </ul>
         </div>
