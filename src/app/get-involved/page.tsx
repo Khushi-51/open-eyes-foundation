@@ -10,11 +10,11 @@ export default function GetInvolvedPage(): React.ReactElement {
       <Navbar />
 
       {/* OVERVIEW HEADER */}
-      <section className="py-20 px-6 max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4">
+      <section className="py-10 px-6 max-w-6xl mx-auto">
+        <h1 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4 text-center">
           Get Involved
         </h1>
-        <p className="text-lg text-muted-foreground max-w-3xl">
+        <p className="text-lg text-muted-foreground max-w-3xl text-center mx-auto">
           There are many ways to support Open Eyes Foundation. Whether you
           contribute your time, skills, or resources, your involvement helps us
           create meaningful and lasting impact in the lives of underserved
@@ -23,7 +23,7 @@ export default function GetInvolvedPage(): React.ReactElement {
       </section>
 
       {/* HOW YOU CAN GET INVOLVED */}
-      <section className="bg-[hsl(var(--muted))] py-20">
+      <section className="bg-[hsl(var(--muted))] py-10">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-12 text-center">
             Ways to Get Involved
@@ -82,11 +82,7 @@ export default function GetInvolvedPage(): React.ReactElement {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CLOSING */}
-      <section className="py-20 px-6 max-w-5xl mx-auto text-center">
+             <section className="py-10 px-6 max-w-full mx-auto text-center">
         <h2 className="text-3xl font-semibold mb-4">
           Every Contribution Matters
         </h2>
@@ -96,6 +92,11 @@ export default function GetInvolvedPage(): React.ReactElement {
           lives.
         </p>
       </section>
+        </div>
+      </section>
+
+      {/* CLOSING */}
+     
 
       <SiteFooter />
     </main>

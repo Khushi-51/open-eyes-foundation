@@ -16,7 +16,7 @@ interface NewsItem {
 const newsData: NewsItem[] = [
   {
     id: 1,
-    title: "Sandeep Kumar and 200 volunteers of his NGO go door-to-door to collect books that UT residents do not require",
+    title: "Sandeep Kumar and 200 volunteers of his NGO go door-to-door to collect books that UT residents do not require.",
     image: "/assets/news/news1.jpg",
     date: "August 7, 2023",
     category: "Events",
@@ -56,7 +56,7 @@ const newsData: NewsItem[] = [
   },
   {
     id: 6,
-    title: "Collected 10,000 old books in 2 years; helping 200 poor children study",
+    title: "Collected 10,000 old books in 2 years; helping 200 poor children study.",
     image: "/assets/news/news6.png",
     date: "September 1, 2025",
     category: "Health",

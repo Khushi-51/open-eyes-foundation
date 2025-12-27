@@ -4,72 +4,73 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 export default function HeroSection(): React.ReactElement {
-  const slides = [
-    {
-      image: "/assets/hero1.png",
-      title: "Polio eradication is within reach",
-      description:
-        "No child should suffer from a disease we know how to prevent.",
-      primaryBtn: { text: "Donate Now", href: "/donate"},
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero2.png",
-      title: "Together, We Can Empower Communities",
-      description:
-        "Be a part of the movement that uplifts lives through education and healthcare.",
-      primaryBtn: { text: "Donate Now", href: "/donate" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero3.jpg",
-      title: "Building a Brighter Future Together",
-      description:
-        "Join hands with us to nurture curiosity and creativity in young minds.",
-      primaryBtn: { text: "Join Now", href: "/join" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero4.png",
-      title: "Health for All, Hope for Everyone",
-      description:
-        "Support our health drives and ensure wellness for underprivileged families.",
-      primaryBtn: { text: "Donate Now", href: "/donate" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero5.jpg",
-      title: "Your Contribution Can Save Lives",
-      description:
-        "Every donation helps us take one more step toward a healthier society.",
-      primaryBtn: { text: "Donate Now", href: "/donate" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero6.png",
-      title: "Join Our Mission of Change",
-      description:
-        "We believe in building sustainable communities through care and compassion.",
-      primaryBtn: { text: "Get Involved", href: "/join" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero7.jpg",
-      title: "Education for Every Child",
-      description:
-        "Let's ensure every child gets the opportunity to learn, grow, and thrive.",
-      primaryBtn: { text: "Contribute", href: "/donate" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-    {
-      image: "/assets/hero8.png",
-      title: "Together, We Can Make a Difference",
-      description:
-        "Join hands with us to bring light, hope, and progress to every community.",
-      primaryBtn: { text: "Donate Now", href: "/donate" },
-      secondaryBtn: { text: "Learn More", href: "/about" },
-    },
-  ];
+const slides = [
+  {
+    image: "/assets/hero1.png",
+    title: "Community Outreach Through Education",
+    description:
+      "Taking books and learning support directly to communities that need it most.",
+    primaryBtn: { text: "Donate Now", href: "/donate" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero2.png",
+    title: "Children Engaged in Learning",
+    description:
+      "Encouraging reading habits and curiosity among young learners.",
+    primaryBtn: { text: "Support Education", href: "/donate" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero3.jpg",
+    title: "Volunteers Making a Difference",
+    description:
+      "Dedicated volunteers interacting with children and guiding them through books.",
+    primaryBtn: { text: "Join as Volunteer", href: "/join" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero4.png",
+    title: "Learning Beyond Classrooms",
+    description:
+      "Creating informal learning spaces where education feels joyful and accessible.",
+    primaryBtn: { text: "Get Involved", href: "/join" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero5.jpg",
+    title: "Books Creating Smiles",
+    description:
+      "Every book shared brings happiness, confidence, and hope to a child.",
+    primaryBtn: { text: "Donate Books", href: "/donate" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero6.png",
+    title: "Empowering Young Minds",
+    description:
+      "Helping children discover the power of reading and imagination.",
+    primaryBtn: { text: "Support Our Work", href: "/donate" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero7.jpg",
+    title: "Community Library Activities",
+    description:
+      "Building reading communities through shared spaces and trust.",
+    primaryBtn: { text: "Join the Mission", href: "/join" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+  {
+    image: "/assets/hero8.png",
+    title: "Education That Inspires Change",
+    description:
+      "Small efforts coming together to create a lasting impact through education.",
+    primaryBtn: { text: "Donate Now", href: "/donate" },
+    secondaryBtn: { text: "Learn More", href: "/about" },
+  },
+];
+
 
   const [current, setCurrent] = useState(0);
 

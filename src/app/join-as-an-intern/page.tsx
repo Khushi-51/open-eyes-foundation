@@ -19,15 +19,16 @@ export default function Internship() {
           <p className="mt-4 text-xl font-medium">
             At Open Eyes Foundation
           </p>
-          <p className="mt-2 text-lg text-muted-foreground">
-            Gain hands-on experience while contributing to meaningful social
-            impact projects that truly make a difference.
-          </p>
+          
         </div>
       </section>
 
       {/* INTRO */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-5 text-center space-y-3">
+        <p className="mt-2 text-lg text-muted-foreground">
+            Gain hands-on experience while contributing to meaningful social
+            impact projects that truly make a difference.
+          </p>
         <p className="text-lg leading-relaxed">
           Open Eyes Foundation offers internship opportunities for individuals
           who want to learn, grow, and contribute to impactful initiatives.
@@ -99,7 +100,7 @@ export default function Internship() {
             application and contact you shortly.
           </p>
           <p className="text-lg">
-            For any queries, feel free to reach out to us—we’re happy to help.
+            For any queries, feel free to reach out to us, we’re happy to help.
           </p>
         </div>
       </section>

@@ -16,15 +16,16 @@ export default function JoinAsVolunteer() {
           <h1 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">
             Volunteer with Open Eyes Foundation
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground">
-            Make a meaningful impact by contributing your time, skills, and
-            compassion to drive positive social change.
-          </p>
+          
         </div>
       </section>
 
       {/* INTRO */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-6xl mx-auto px-6 py-2 mb-4 text-center space-y-3">
+        <p className="mt-6 text-lg text-muted-foreground">
+            Make a meaningful impact by contributing your time, skills, and
+            compassion to drive positive social change.
+          </p>
         <p className="text-lg leading-relaxed">
           At Open Eyes Foundation, volunteers are the heart of everything we do.
           Whether you’re passionate about education, community service, or
@@ -61,7 +62,7 @@ export default function JoinAsVolunteer() {
       </section>
 
       {/* HOW TO APPLY */}
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
         <h2 className="text-3xl font-semibold mb-6">
           How to Become a Volunteer
         </h2>
@@ -71,16 +72,9 @@ export default function JoinAsVolunteer() {
           back to you shortly.
         </p>
         <p className="text-lg">
-          For any further queries, feel free to contact us—we’d love to hear
+          For any further queries, feel free to contact us, we’d love to hear
           from you.
         </p>
-      </section>
-
-      {/* CTA */}
-      <section className="py-24 px-6 text-center bg-[hsl(var(--muted))]">
-        <h2 className="text-3xl font-bold mb-4">
-          Become a Volunteer
-        </h2>
         <p className="mb-8 max-w-2xl mx-auto text-lg">
           Join hands with us and help create brighter futures through education
           and compassion.
@@ -92,6 +86,7 @@ export default function JoinAsVolunteer() {
           Join as Volunteer
         </a>
       </section>
+
 
       <SiteFooter />
     </div>

@@ -17,32 +17,32 @@ const gallery: GalleryItem[] = [
   { type: "image", src: "/assets/programs/raddi-se-shiksha.png", caption: "Raddi Se Shiksha – Book Bank Project" },
 
   // HERO / ACTIVITIES
-  { type: "image", src: "/assets/hero.png", caption: "Community Outreach Program" },
-  { type: "image", src: "/assets/hero1.png", caption: "Children Engaged in Reading" },
-  { type: "image", src: "/assets/hero2.png", caption: "Volunteer Interaction Session" },
-  { type: "image", src: "/assets/hero3.jpg", caption: "Education for All Initiative" },
-  { type: "image", src: "/assets/hero4.png", caption: "Learning Beyond Classrooms" },
-  { type: "image", src: "/assets/hero5.jpg", caption: "Books Changing Lives" },
-  { type: "image", src: "/assets/hero6.png", caption: "Empowering Young Minds" },
-  { type: "image", src: "/assets/hero7.jpg", caption: "Community Library Activity" },
-  { type: "image", src: "/assets/hero8.png", caption: "Smiles Through Education" },
+  { type: "image", src: "/assets/hero1.png", caption: "Smiles of learning children receiving educational kits through our Mobile Library initiative" },
+  { type: "image", src: "/assets/hero2.png", caption: "Community support in action volunteers and educators collecting donated books for redistribution" },
+  { type: "image", src: "/assets/hero3.jpg", caption: "Library of Honesty launch promoting free access to books and trust-based learning" },
+  { type: "image", src: "/assets/hero4.png", caption: "Empowering students school bags and study essentials distributed to children in need" },
+  { type: "image", src: "/assets/hero5.jpg", caption: "Hope on Wheels our mobile library bringing free books directly to communities" },
+  { type: "image", src: "/assets/hero6.png", caption: "Books for all shelves filled with donated books ready to inspire young readers" },
+  { type: "image", src: "/assets/hero7.jpg", caption: "Learning beyond classrooms children engaging with books at the mobile library" },
+  { type: "image", src: "/assets/hero8.png", caption: "Reading together creating joyful learning spaces through our mobile library program" },
+  { type: "image", src: "/assets/hero.png", caption: "Smiles Through Education" },
 
   // AWARDS
-  { type: "image", src: "/assets/awards/award1.jpg", caption: "Award for Social Impact" },
-  { type: "image", src: "/assets/awards/award2.jpg", caption: "Recognition for Literacy Work" },
-  { type: "image", src: "/assets/awards/award3.png", caption: "Honored for Community Service" },
-  { type: "image", src: "/assets/awards/award4.png", caption: "National Level Appreciation" },
-  { type: "image", src: "/assets/awards/award5.png", caption: "Excellence in Education" },
-  { type: "image", src: "/assets/awards/award6.jpg", caption: "Awarded for Grassroots Impact" },
-  { type: "image", src: "/assets/awards/award7.png", caption: "Recognition by Esteemed Platform" },
+  { type: "image", src: "/assets/awards/award1.jpg", caption: "Honoured by Rotary Chandigarh Shivalik" },
+  { type: "image", src: "/assets/awards/award2.jpg", caption: "Honoured by NYKS Chandigarh" },
+  { type: "image", src: "/assets/awards/award3.png", caption: "Featured in 'Mann Ki Baat' by PM Modi" },
+  { type: "image", src: "/assets/awards/award4.png", caption: "Winner of JIYO DIL SE AWARD S-7" },
+  { type: "image", src: "/assets/awards/award5.png", caption: "Honoured by SBI Chandigarh Circle" },
+  { type: "image", src: "/assets/awards/award6.jpg", caption: "SBI gifted a tempo traveller" },
+  { type: "image", src: "/assets/awards/award7.png", caption: "Hounered by Mayor of Chandigarh" },
 
   // NEWS
-  { type: "image", src: "/assets/news/news1.jpg", caption: "Featured in News Media" },
-  { type: "image", src: "/assets/news/news2.png", caption: "Our Work in Headlines" },
-  { type: "image", src: "/assets/news/news3.png", caption: "Media Coverage of NGO Activities" },
-  { type: "image", src: "/assets/news/news4.png", caption: "Open Eyes Foundation in News" },
-  { type: "image", src: "/assets/news/news5.png", caption: "Impact Stories Shared Publicly" },
-  { type: "image", src: "/assets/news/news6.png", caption: "Recognized for Social Contribution" },
+  { type: "image", src: "/assets/news/news1.jpg", caption: "Sandeep Kumar and 200 volunteers of his NGO go door-to-door to collect books that UT residents do not require" },
+  { type: "image", src: "/assets/news/news2.png", caption: "Mobile Library: A Van Turned into a Library to Distribute Books" },
+  { type: "image", src: "/assets/news/news3.png", caption: "Hon’ble Prime Minister Narendra Modi praised Chandigarh’s Sandeep Kumar during Mann Ki Baat" },
+  { type: "image", src: "/assets/news/news4.png", caption: "Hope on Wheels: Sandeep Kumar’s initiative ‘Raddi Se Shiksha’" },
+  { type: "image", src: "/assets/news/news5.png", caption: "This library has no lock whoever needs a book may take it and return it honestly" },
+  { type: "image", src: "/assets/news/news6.png", caption: "Collected 10,000 old books in 2 years; helping 200 poor children study" },
 
   // VIDEOS
   { type: "video", id: "-kRZK7oTktM", title: "Story of Bookman - Sandeep Kumar" },
@@ -157,9 +157,10 @@ export default function AchievementsPage(): React.ReactElement {
               <>
                 <iframe
                   className="w-full h-[40vh] sm:h-[60vh]"
-                  src={`https://www.youtube.com/embed/${activeItem.id}`}
+                  src={`https://www.youtube.com/embed/${activeItem.id}?controls=1&modestbranding=1&rel=0&showinfo=0`}
                   allowFullScreen
                 />
+
                 <p className="text-white mt-4">{activeItem.title}</p>
               </>
             )}

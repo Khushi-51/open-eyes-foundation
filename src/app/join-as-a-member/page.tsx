@@ -14,15 +14,16 @@ export default function JoinAsMember() {
         <h1 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">
           Mission 100 – A Circle of Change Makers
         </h1>
+        
+      </section>
+
+      {/* About */}
+      <section className="max-w-6xl mx-auto px-6 py-5 mb-4 space-y-6 mx-auto">
         <p className="mt-6 text-lg text-muted-foreground">
           An initiative by <strong>Open Eyes Foundation</strong> bringing together
           100 compassionate individuals committed to educating underprivileged
           children and helping them progress in life.
         </p>
-      </section>
-
-      {/* About */}
-      <section className="max-w-6xl mx-auto px-6 py-10 space-y-6 mx-auto">
         <p>
           Mission 100 members act as the backbone of our foundation, ensuring
           that our work for underprivileged children continues seamlessly,
