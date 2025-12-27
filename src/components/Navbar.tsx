@@ -82,7 +82,7 @@ export default function Navbar() {
 
 
               <NavLink href="/what-we-do">What We Do</NavLink>
-              <NavLink href="/achievements">Achievements</NavLink>
+              <NavLink href="/Gallery">Gallery</NavLink>
 
               <div className="relative group">
                 <span className="cursor-pointer hover:text-blue-700 transition-colors">
