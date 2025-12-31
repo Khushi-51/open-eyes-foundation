@@ -6,87 +6,156 @@ import SiteFooter from "@/components/SiteFooter";
 
 export default function JoinAsVolunteer() {
   return (
-    <div className="font-sans text-[hsl(var(--foreground))] bg-[hsl(var(--background))]">
+    <div className="font-sans bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
       <Navbar />
 
       {/* HERO */}
-      <section className="relative py-10 px-6 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--primary)/0.08)] to-transparent" />
-        <div className="relative max-w-5xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-[hsl(var(--primary))]">
-            Volunteer with Open Eyes Foundation
+      <section className="relative py-28 px-6 text-center bg-[var(--light-green-200)] text-black">
+        <div className="max-w-4xl mx-auto space-y-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold">
+            Eyes That See, Hearts That Care
           </h1>
-          
-        </div>
-      </section>
-
-      {/* INTRO */}
-      <section className="max-w-6xl mx-auto px-6 py-2 mb-4 text-center space-y-3">
-        <p className="mt-6 text-lg text-muted-foreground">
-            Make a meaningful impact by contributing your time, skills, and
-            compassion to drive positive social change.
+          <p className="text-xl opacity-90">
+            Your passion combined with our vision can change lives. Join Open
+            Eyes Foundation as a leader, mentor, and catalyst for social change.
           </p>
-        <p className="text-lg leading-relaxed">
-          At Open Eyes Foundation, volunteers are the heart of everything we do.
-          Whether you’re passionate about education, community service, or
-          grassroots impact, your involvement can truly change lives.
-        </p>
-      </section>
-
-      {/* WHERE YOU CAN CONTRIBUTE */}
-      <section className="bg-[hsl(var(--muted))] py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-semibold mb-10 text-center">
-            Where You Can Make a Difference
-          </h2>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              "Mobile Library Initiative",
-              "Library of Honesty",
-              "Book Donation Box Program",
-              "Raddi Se Shiksha – Book Bank Project",
-              "Khushiyon Ki Potli",
-              "Naya Savera",
-              "Mission Literacy"
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="bg-white p-6 rounded-2xl shadow-md border text-center hover:shadow-lg transition"
-              >
-                <p className="font-medium text-lg">{item}</p>
-              </div>
-            ))}
-          </div>
+          <a
+            href="#enroll"
+            className="inline-block mt-6 px-10 py-4 rounded-full bg-[hsl(var(--background))] text-[hsl(var(--primary))] font-bold hover:opacity-90 transition"
+          >
+            APPLY NOW
+          </a>
         </div>
       </section>
 
-      {/* HOW TO APPLY */}
-      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
-        <h2 className="text-3xl font-semibold mb-6">
-          How to Become a Volunteer
+      {/* WHY VOLUNTEER */}
+      <section className="py-24">
+        <h2 className="text-3xl font-bold text-center mb-14 text-[hsl(var(--primary))]">
+          Why Volunteer With Us?
         </h2>
-        <p className="text-lg mb-6">
-          To review our terms and conditions and submit your application, please
-          fill out the volunteer form. Our team will review your details and get
-          back to you shortly.
-        </p>
-        <p className="text-lg">
-          For any further queries, feel free to contact us, we’d love to hear
-          from you.
-        </p>
-        <p className="mb-8 max-w-2xl mx-auto text-lg">
-          Join hands with us and help create brighter futures through education
-          and compassion.
-        </p>
-        <a
-          href="https://docs.google.com/forms/d/e/1FAIpQLSdyLUvci-vYKUZ0bMaKvFH-7Ajcftx7_N3ySwpADI7f1V4gsg/viewform"
-          className="inline-block px-10 py-4 rounded-2xl bg-[var(--marian-blue)] text-white font-semibold shadow-lg hover:scale-105 transition"
-        >
-          Join as Volunteer
-        </a>
+
+        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
+          {[
+            {
+              title: "Professional Certification",
+              desc: "Receive a verified Certificate of Volunteering aligned with Foundation SOPs.",
+            },
+            {
+              title: "Skill Enhancement",
+              desc: "Hands-on exposure to leadership, project management, and outreach.",
+            },
+            {
+              title: "Policy Compliance",
+              desc: "Learn Child Protection, POSH, Ethics & responsible social work practices.",
+            },
+          ].map((item, i) => (
+            <div
+              key={i}
+              className="bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-8 rounded-2xl shadow-md border-t-4 border-[hsl(var(--primary))] hover:-translate-y-2 transition"
+            >
+              <h3 className="text-xl font-semibold mb-4">
+                {item.title}
+              </h3>
+              <p className="text-muted-foreground">{item.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
+      {/* LEADERSHIP BANNER */}
+      <section className="bg-[hsl(var(--muted))] py-20 px-6">
+        <div className="max-w-5xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">
+            Opportunity to Lead Projects
+          </h2>
+          <p className="text-lg leading-relaxed">
+            At Open Eyes Foundation, we don’t just need volunteers — we nurture
+            leaders. Selected volunteers get opportunities to lead independent
+            projects, manage teams, and coordinate ground-level initiatives.
+          </p>
+        </div>
+      </section>
+
+      {/* VOLUNTEER FORM */}
+      <section id="enroll" className="py-28 bg-[hsl(var(--background))] px-6">
+        <div className="max-w-3xl mx-auto bg-[hsl(var(--card))] p-10 md:p-14 rounded-3xl shadow-xl border">
+          <h2 className="text-3xl font-bold text-center text-[hsl(var(--primary))]">
+            Volunteer Enrollment Form
+          </h2>
+          <p className="text-center mt-2 mb-10 text-muted-foreground">
+            Commitment is the first step toward impact
+          </p>
+
+          <form className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-6">
+              <input
+                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
+                placeholder="Full Name"
+                required
+              />
+              <select
+                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))]"
+              >
+                <option>Blood Group</option>
+                <option>A+</option>
+                <option>B+</option>
+                <option>O+</option>
+                <option>AB+</option>
+                <option>Others</option>
+              </select>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6">
+              <input
+                type="email"
+                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
+                placeholder="Email Address"
+                required
+              />
+              <input
+                type="tel"
+                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
+                placeholder="Mobile Number"
+                required
+              />
+            </div>
+
+            <textarea
+              rows={3}
+              className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
+              placeholder="Permanent Address"
+            />
+
+            <input
+              className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))]"
+              placeholder="Emergency Contact (Name & Relation)"
+              required
+            />
+
+            {/* SOP */}
+            <div className="bg-[hsl(var(--muted))] p-6 rounded-xl border border-[hsl(var(--border))] text-sm">
+              <p className="leading-relaxed">
+                I agree to contribute a minimum of <b>120 hours annually</b> and
+                strictly comply with Open Eyes Foundation SOPs, POSH, Child
+                Protection, and ethical guidelines. Confidentiality is mandatory.
+              </p>
+              <div className="flex gap-3 mt-4 items-center">
+                <input type="checkbox" required />
+                <span className="font-semibold">
+                  I accept all Foundation policies & terms
+                </span>
+              </div>
+            </div>
+
+            <button
+              type="submit"
+              className="w-full py-4 rounded-2xl bg-[var(--marian-blue-100)] text-[hsl(var(--primary-foreground))] font-semibold text-lg hover:opacity-90 transition"
+            >
+              SUBMIT APPLICATION
+            </button>
+          </form>
+        </div>
+      </section>
 
       <SiteFooter />
     </div>
