@@ -31,11 +31,11 @@ export default function GetInvolvedPage(): React.ReactElement {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Volunteer */}
-            <div className="bg-white p-8 rounded-2xl shadow-md border hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold mb-3">
+            <div className="bg-white p-8 rounded-2xl shadow-md border hover:shadow-lg transition text-center">
+              <h3 className="text-xl font-semibold mb-5">
                  Volunteer
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-justify">
                 Be a part of our on-ground and outreach initiatives. Contribute
                 your time and skills to support education, libraries, and
                 community programs.
@@ -50,10 +50,10 @@ export default function GetInvolvedPage(): React.ReactElement {
 
             {/* Mission 100 */}
             <div className="bg-white p-8 rounded-2xl shadow-md border hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold mb-5 text-center">
                  Mission 100
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-justify">
                 Become a Mission 100 member and help sustain our core operations
                 through consistent support and guidance.
               </p>
@@ -67,10 +67,10 @@ export default function GetInvolvedPage(): React.ReactElement {
 
             {/* Internship */}
             <div className="bg-white p-8 rounded-2xl shadow-md border hover:shadow-lg transition">
-              <h3 className="text-xl font-semibold mb-3">
+              <h3 className="text-xl font-semibold mb-5 text-center">
                  Internship
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-muted-foreground mb-6 text-justify">
                 Gain hands-on experience while working on real social impact
                 projects with mentorship and learning opportunities.
               </p>

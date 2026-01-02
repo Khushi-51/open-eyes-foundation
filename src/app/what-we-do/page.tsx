@@ -27,7 +27,7 @@ const programs = [
     title: "Naya Savera",
     desc: "Scholarships and support for vulnerable children.",
     img: "/assets/programs/naya-savera.jpg",
-    link: "/what-we-do/naya-savera",
+    link: "/what-we-do/nayasavera",
   },
   {
     title: "Mission Literacy",
