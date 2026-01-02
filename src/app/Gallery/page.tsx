@@ -78,7 +78,7 @@ export default function AchievementsPage(): React.ReactElement {
 
       {/* Header */}
       <section className="py-14 max-w-6xl mx-auto px-6 text-center">
-        <h1 className="text-4xl font-bold text-[#003366] mb-3">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
           Our Gallery
         </h1>
         <p className="text-gray-600">

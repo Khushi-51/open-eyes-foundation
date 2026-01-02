@@ -36,15 +36,17 @@ export default function ContactUs() {
       <Header />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 px-4">
+      <section className="text-center py-14 px-4">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
-          <p className="text-lg opacity-90">Feel free to reach out to us with any queries or suggestions</p>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
+          Contact Us
+        </h1>
+          <p className="text-gray-600">Feel free to reach out to us with any queries or suggestions</p>
         </div>
       </section>
 
       {/* Contact Information */}
-      <section className="max-w-6xl mx-auto py-16 px-4">
+      <section className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           <div className="bg-gradient-to-br from-blue-50 to-cyan-50 p-8 rounded-lg shadow-md">
             <div className="flex items-center gap-4 mb-4">

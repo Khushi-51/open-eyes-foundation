@@ -1,102 +1,139 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import SiteFooter from "@/components/SiteFooter";
 
 export default function JoinAsVolunteer() {
+  const [name, setName] = useState("");
+  const [bloodGroup, setBloodGroup] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [address, setAddress] = useState("");
+  const [emergencyContact, setEmergencyContact] = useState("");
+  const [agree, setAgree] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    await fetch("/api/forms", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        formType: "Volunteer",
+        name,
+        bloodGroup,
+        email,
+        phone,
+        address,
+        emergencyContact,
+      }),
+    });
+
+    alert("Application submitted successfully!");
+
+    // reset
+    setName("");
+    setBloodGroup("");
+    setEmail("");
+    setPhone("");
+    setAddress("");
+    setEmergencyContact("");
+    setAgree(false);
+  };
+
   return (
-    <div className="font-sans bg-[hsl(var(--background))] text-[hsl(var(--foreground))]">
+    <div className="font-sans">
       <Navbar />
 
       {/* HERO */}
-      <section className="relative py-28 px-6 text-center bg-[var(--light-green-200)] text-black">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <h1 className="text-4xl md:text-6xl font-extrabold">
-            Eyes That See, Hearts That Care
-          </h1>
-          <p className="text-xl opacity-90">
-            Your passion combined with our vision can change lives. Join Open
-            Eyes Foundation as a leader, mentor, and catalyst for social change.
-          </p>
-          <a
-            href="#enroll"
-            className="inline-block mt-6 px-10 py-4 rounded-full bg-[hsl(var(--background))] text-[hsl(var(--primary))] font-bold hover:opacity-90 transition"
-          >
-            APPLY NOW
-          </a>
-        </div>
-      </section>
+     <section className="relative py-14 px-6 text-center overflow-hidden">
+  {/* Gradient overlay */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--primary)/0.08)] to-transparent" />
 
-      {/* WHY VOLUNTEER */}
-      <section className="py-24">
-        <h2 className="text-3xl font-bold text-center mb-14 text-[hsl(var(--primary))]">
-          Why Volunteer With Us?
-        </h2>
+  <div className="relative max-w-5xl mx-auto space-y-4">
+    {/* Main Heading */}
+   <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
+          Volunteer Leadership
+        </h1>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto px-6">
-          {[
-            {
-              title: "Professional Certification",
-              desc: "Receive a verified Certificate of Volunteering aligned with Foundation SOPs.",
-            },
-            {
-              title: "Skill Enhancement",
-              desc: "Hands-on exposure to leadership, project management, and outreach.",
-            },
-            {
-              title: "Policy Compliance",
-              desc: "Learn Child Protection, POSH, Ethics & responsible social work practices.",
-            },
-          ].map((item, i) => (
-            <div
-              key={i}
-              className="bg-[hsl(var(--card))] text-[hsl(var(--card-foreground))] p-8 rounded-2xl shadow-md border-t-4 border-[hsl(var(--primary))] hover:-translate-y-2 transition"
-            >
-              <h3 className="text-xl font-semibold mb-4">
-                {item.title}
-              </h3>
-              <p className="text-muted-foreground">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+    {/* Tagline */}
+    <p className="text-gray-600">
+      Be the Change · Inspire Lives · Lead With Purpose
+    </p>
 
-      {/* LEADERSHIP BANNER */}
-      <section className="bg-[hsl(var(--muted))] py-20 px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-[hsl(var(--primary))]">
-            Opportunity to Lead Projects
+    {/* Optional smaller heading */}
+    <h6 className="text-2xl font-semibold pt-4">
+      Be the Hero, Make a Difference
+    </h6>
+
+    {/* Supporting text */}
+    <p className="text-lg leading-relaxed text-justify max-w-3xl mx-auto">
+      Every small act of kindness can create a ripple of positive impact. Volunteer your time, skills, and energy to help those in need, inspire change, and be the hero in someone’s story.
+    </p>
+
+  </div>
+</section>
+
+
+       <section className="bg-[hsl(var(--muted))] py-20">
+        <div className="max-w-6xl mx-auto px-6">
+          <h2 className="text-3xl font-semibold mb-12 text-center">
+            What You’ll Gain as an Intern
           </h2>
-          <p className="text-lg leading-relaxed">
-            At Open Eyes Foundation, we don’t just need volunteers — we nurture
-            leaders. Selected volunteers get opportunities to lead independent
-            projects, manage teams, and coordinate ground-level initiatives.
-          </p>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+  {
+    title: "Volunteering Experience",
+    desc: "Receive an official Certificate of Volunteering upon successful completion, aligned with our SOPs and ethical standards."
+  },
+  {
+    title: "Skill & Leadership Development",
+    desc: "Build real-world skills in project execution, teamwork, communication, and community engagement."
+  },
+  {
+    title: "Ethical & Policy-Based Exposure",
+    desc: "Gain structured understanding of Child Protection, POSH compliance, confidentiality, and responsible social work."
+  }
+]
+.map((item, i) => (
+              <div
+                key={i}
+                className="bg-[hsl(var(--card))] p-8 rounded-2xl shadow-md border-t-4 border-[hsl(var(--primary))] text-center"
+              >
+                <h3 className="font-semibold text-lg mb-5">{item.title}</h3>
+                <p className="text-muted-foreground text-justify ">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* VOLUNTEER FORM */}
-      <section id="enroll" className="py-28 bg-[hsl(var(--background))] px-6">
-        <div className="max-w-3xl mx-auto bg-[hsl(var(--card))] p-10 md:p-14 rounded-3xl shadow-xl border">
-          <h2 className="text-3xl font-bold text-center text-[hsl(var(--primary))]">
+      {/* FORM */}
+      <section id="enroll" className="py-28 px-6">
+        <div className="max-w-3xl mx-auto bg-white p-10 rounded-3xl shadow-xl border">
+          <h2 className="text-3xl font-bold mb-10">
             Volunteer Enrollment Form
           </h2>
-          <p className="text-center mt-2 mb-10 text-muted-foreground">
-            Commitment is the first step toward impact
-          </p>
 
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <input
-                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 placeholder="Full Name"
                 required
+                className="w-full p-3 border rounded-xl"
               />
+
               <select
-                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))]"
+                value={bloodGroup}
+                onChange={(e) => setBloodGroup(e.target.value)}
+                required
+                className="w-full p-3 border rounded-xl"
               >
-                <option>Blood Group</option>
+                <option value="">Blood Group</option>
                 <option>A+</option>
                 <option>B+</option>
                 <option>O+</option>
@@ -108,48 +145,61 @@ export default function JoinAsVolunteer() {
             <div className="grid md:grid-cols-2 gap-6">
               <input
                 type="email"
-                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
-                placeholder="Email Address"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email"
                 required
+                className="w-full p-3 border rounded-xl"
               />
+
               <input
                 type="tel"
-                className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
-                placeholder="Mobile Number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone"
                 required
+                className="w-full p-3 border rounded-xl"
               />
             </div>
 
             <textarea
+              value={address}
+              onChange={(e) => setAddress(e.target.value)}
+              placeholder="Address"
               rows={3}
-              className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))] focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))]"
-              placeholder="Permanent Address"
+              required
+              className="w-full p-3 border rounded-xl"
             />
 
             <input
-              className="w-full p-3 rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--background))]"
+              value={emergencyContact}
+              onChange={(e) => setEmergencyContact(e.target.value)}
               placeholder="Emergency Contact (Name & Relation)"
               required
+              className="w-full p-3 border rounded-xl"
             />
 
-            {/* SOP */}
-            <div className="bg-[hsl(var(--muted))] p-6 rounded-xl border border-[hsl(var(--border))] text-sm">
-              <p className="leading-relaxed">
-                I agree to contribute a minimum of <b>120 hours annually</b> and
-                strictly comply with Open Eyes Foundation SOPs, POSH, Child
-                Protection, and ethical guidelines. Confidentiality is mandatory.
+            <div className="bg-slate-100 p-5 rounded-xl text-sm text-justify">
+              <p>
+                I agree to contribute minimum <b>120 hours annually</b> and
+                follow all Foundation SOPs & policies.
               </p>
-              <div className="flex gap-3 mt-4 items-center">
-                <input type="checkbox" required />
+              <label className="flex gap-3 mt-4 items-center">
+                <input
+                  type="checkbox"
+                  checked={agree}
+                  onChange={(e) => setAgree(e.target.checked)}
+                  required
+                />
                 <span className="font-semibold">
-                  I accept all Foundation policies & terms
+                  I accept all terms & conditions
                 </span>
-              </div>
+              </label>
             </div>
 
             <button
               type="submit"
-              className="w-full py-4 rounded-2xl bg-[var(--marian-blue-100)] text-[hsl(var(--primary-foreground))] font-semibold text-lg hover:opacity-90 transition"
+              className="w-full py-4 rounded-2xl bg-[var(--marian-blue-100)] text-white font-semibold text-lg"
             >
               SUBMIT APPLICATION
             </button>

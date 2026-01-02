@@ -10,11 +10,11 @@ export default function GetInvolvedPage(): React.ReactElement {
       <Navbar />
 
       {/* OVERVIEW HEADER */}
-      <section className="py-10 px-6 max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-[hsl(var(--primary))] mb-4 text-center">
+      <section className="py-10 px-6 max-w-6xl mx-auto text-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
           Get Involved
         </h1>
-        <p className="text-lg text-muted-foreground max-w-3xl text-center mx-auto">
+        <p className="text-lg text-gray-600 max-w-3xl text-center mx-auto">
           There are many ways to support Open Eyes Foundation. Whether you
           contribute your time, skills, or resources, your involvement helps us
           create meaningful and lasting impact in the lives of underserved
