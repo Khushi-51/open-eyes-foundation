@@ -39,7 +39,7 @@ export default function OurMembers() {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-4 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
