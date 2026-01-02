@@ -43,10 +43,10 @@ export default function AboutPage(): React.ReactElement {
       </section>
 
       {/* ======= ABOUT CONTENT ======= */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12">
-        <div className="prose max-w-none font-normal leading-relaxed text-gray-700 text-sm sm:text-base">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
+        <div className="prose font-normal leading-relaxed text-gray-700 text-sm sm:text-base text-justify">
           <p>
-            <span className="font-semibold text-[var(--marian-blue-200)]">
+            <span className="font-semibold text-[var(--marian-blue-200)] text-justify">
               Open Eyes Foundation Manimajra Chandigarh (OEFMC)
             </span>
             , a non-governmental organization (NGO), has been working tirelessly
