@@ -66,10 +66,7 @@ export default function NewsSection() {
         <h2 className="text-3xl md:text-4xl font-bold text-white">
             Latest <span className="text-white">News</span>
           </h2>
-          <br/>
-        <button className="bg-[#FACC15] text-black px-3 py-1 rounded-full text-sm hover:bg-red-600 transition">
-          All News
-        </button>
+       <br/>
         </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-2 py-2 mx-5 md:mx-20">
         {newsData.map((news, index) => {

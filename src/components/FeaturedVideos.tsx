@@ -14,7 +14,7 @@ const videos = [
 export default function FeaturedVideos() {
   return (
     <section className="py-10 bg-white mx-2">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
 
         {/* Heading */}
         <div className="text-center mb-12">
