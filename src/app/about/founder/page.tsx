@@ -12,7 +12,7 @@ export default function FounderPage(): React.ReactElement {
 
       {/* Hero Section */}
       <section className="py-8 text-center relative overflow-hidden">
-        <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
+        <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-2 relative z-10">
           About the Founder
         </h1>
         <p className="text-lg text-gray-600 max-w-3xl mx-auto">
@@ -42,13 +42,13 @@ export default function FounderPage(): React.ReactElement {
           </div>
 
           {/* Text Section */}
-          <div className="md:w-1/2 w-full space-y-5 text-gray-700 leading-relaxed pb-2">
+          <div className="md:w-1/2 w-full space-y-5 text-gray-700 leading-relaxed pb-2 text-justify mb-2">
             <p>
               All of us go through life, but some moments have a greater impact than others.
               Sometimes we see problems in our surroundings and we do one of three things:
               we ignore them, we notice but do nothing, or we decide to act. Our founder,
               <span className="font-semibold text-blue-700"> Sandeep Kumar</span>, belonged
-              to the third category — he took action to educate underprivileged children around him.
+              to the third category he took action to educate underprivileged children around him.
             </p>
 
             <p>
@@ -59,9 +59,9 @@ export default function FounderPage(): React.ReactElement {
             </p>
           </div>
           </div>
-          <div className="md:w-full w-full space-y-5 text-gray-700 leading-relaxed">
+          <div className="md:w-full w-full space-y-5 text-gray-700 leading-relaxed text-justify">
             <p>
-              During his internship in a government school, he discovered a harsh truth —
+              During his internship in a government school, he discovered a harsh truth
               many intelligent students couldn’t take notes because they lacked basic
               stationery. “We don’t have books, pens, or pencils, masterji,” they said.
             </p>
@@ -75,7 +75,7 @@ export default function FounderPage(): React.ReactElement {
             </p>
 
             <p>
-              Returning to Chandigarh, he observed similar issues — students struggling due
+              Returning to Chandigarh, he observed similar issues students struggling due
               to a lack of books and resources. Determined to help, he began collecting
               half-used notebooks, old textbooks, and stationery from his own home.
             </p>
