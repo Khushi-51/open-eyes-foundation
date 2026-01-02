@@ -43,7 +43,7 @@ export default function AboutPage(): React.ReactElement {
       </section>
 
       {/* ======= ABOUT CONTENT ======= */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12">
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 md:px-12">
         <div className="prose font-normal leading-relaxed text-gray-700 text-lg sm:text-base text-justify">
           <p>
             <p className="font-semibold text-[var(--marian-blue-200)] text-justify">
