@@ -84,8 +84,8 @@ export default function ContactUs() {
               <h3 className="text-xl font-bold text-gray-800">Email</h3>
             </div>
             <p className="text-gray-700">
-              <a href="mailto:openeyesfoundationhr@gmail.com" className="hover:text-blue-600">
-                openeyesfoundationhr@gmail.com
+              <a href="mailto:openeyesfoundation1@gmail.com" className="hover:text-blue-600">
+                openeyesfoundation1@gmail.com
               </a>
               <br />
               <a href="mailto:openeyesfoundation1@gmail.com" className="hover:text-blue-600 text-sm">
@@ -175,7 +175,7 @@ export default function ContactUs() {
       {/* Social Media Section */}
       <section className="bg-gray-50 py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8 text-gray-800">Connect on Social Hub</h2>
+          <h2 className="text-3xl font-bold mb-8 text-gray-800">Join Our Journey on Social Media</h2>
           <div className="grid md:grid-cols-3 gap-6">
             <a
               href="https://www.facebook.com/openeyesfoundationchd/"
@@ -183,6 +183,7 @@ export default function ContactUs() {
               rel="noopener noreferrer"
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
+              <i className="ci ci-facebook"></i>
               <h3 className="text-xl font-bold text-blue-600 mb-2">Facebook</h3>
               <p className="text-gray-600 mb-4">Follow us for updates and news</p>
               <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">

@@ -16,6 +16,14 @@ interface NewsItem {
 const newsData: NewsItem[] = [
   {
     id: 1,
+    title: "Collected 10,000 old books in 2 years; helping 200 poor children study.",
+    image: "/assets/news/news6.png",
+    date: "September 1, 2025",
+    category: "Health",
+    link: "#",
+  },
+  {
+    id: 2,
     title: "Sandeep Kumar and 200 volunteers of his NGO go door-to-door to collect books that UT residents do not require.",
     image: "/assets/news/news1.jpg",
     date: "August 7, 2023",
@@ -23,7 +31,7 @@ const newsData: NewsItem[] = [
     link: "#",
   },
   {
-    id: 2,
+    id: 3,
     title: "Mobile Library: A Van Turned into a Library to Distribute Books.",
     image: "/assets/news/news2.png",
     date: "August 8, 2025",
@@ -31,35 +39,11 @@ const newsData: NewsItem[] = [
     link: "#",
   },
   {
-    id: 3,
+    id: 4,
     title: "Hon’ble Prime Minister Narendra Modi praised Chandigarh’s Sandeep Kumar during Mann Ki Baat.",
     image: "/assets/news/news3.png",
     date: "August 15, 2025",
     category: "Articles",
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "Hope on Wheels: Sandeep Kumar’s initiative ‘Raddi Se Shiksha’.",
-    image: "/assets/news/news4.png",
-    date: "August 21, 2025",
-    category: "Articles",
-    link: "#",
-  },
-  {
-    id: 5,
-    title: "This library has no lock whoever needs a book may take it and return it honestly.",
-    image: "/assets/news/news5.png",
-    date: "August 27, 2025",
-    category: "Programs",
-    link: "#",
-  },
-  {
-    id: 6,
-    title: "Collected 10,000 old books in 2 years; helping 200 poor children study.",
-    image: "/assets/news/news6.png",
-    date: "September 1, 2025",
-    category: "Health",
     link: "#",
   },
 ];
@@ -87,7 +71,7 @@ export default function NewsSection() {
           All News
         </button>
         </div>
-      <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4 px-2 py-2 mx-5 md:mx-20">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 px-2 py-2 mx-5 md:mx-20">
         {newsData.map((news, index) => {
           const color =
             index % 2 === 0 ? "bg-red-600" : "bg-red-500";
@@ -105,7 +89,7 @@ export default function NewsSection() {
                   alt={news.title}
                   width={800}
                   height={600}
-                  className="object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
+                  className="border border-black-200 p-1 object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
                 />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />

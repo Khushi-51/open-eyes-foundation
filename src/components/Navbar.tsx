@@ -94,17 +94,15 @@ export default function Navbar() {
                             opacity-0 invisible group-hover:opacity-100 group-hover:visible 
                             transition-all duration-200 pointer-events-auto"
                 >
-                  <Link href="/get-involved" className="block px-4 py-2 hover:bg-gray-100">
-                    Overview
-                  </Link>
-                  <Link href="/volunteer" className="block px-4 py-2 hover:bg-gray-100">
-                    Volunteer
-                  </Link>
+                 
                   <Link href="/join-as-a-member" className="block px-4 py-2 hover:bg-gray-100">
                     Become a Member
                   </Link>
+                  <Link href="/volunteer" className="block px-4 py-2 hover:bg-gray-100">
+                    Join as a Volunteer
+                  </Link>
                   <Link href="/join-as-an-intern" className="block px-4 py-2 hover:bg-gray-100">
-                    Internship
+                    Apply for Internship
                   </Link>
                 </div>
               </div>
@@ -175,7 +173,7 @@ export default function Navbar() {
               About the Organisation
             </Link>
             <Link
-              href="/about/founder"
+              href="/about/about/founder"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-blue-700"
             >
@@ -217,32 +215,26 @@ export default function Navbar() {
         {openDropdown === "involved" && (
           <div className="flex flex-col ml-4 border-l border-gray-300 pl-3 text-sm text-gray-600">
             <Link
-              href="/get-involved"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-blue-700"
-            >
-              Overview
-            </Link>
-            <Link
-              href="/volunteer"
-              onClick={() => setMobileMenuOpen(false)}
-              className="py-1 hover:text-blue-700"
-            >
-              Volunteer
-            </Link>
-            <Link
               href="/join-as-a-member"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-blue-700"
             >
               Become a Member
             </Link>
+            
+            <Link
+              href="/volunteer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="py-1 hover:text-blue-700"
+            >
+              Join as a Volunteer
+            </Link>
             <Link
               href="/join-as-an-intern"
               onClick={() => setMobileMenuOpen(false)}
               className="py-1 hover:text-blue-700"
             >
-              Internship
+              Apply for Internship
             </Link>
           </div>
         )}

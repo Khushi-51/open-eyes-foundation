@@ -46,8 +46,27 @@ export default function JoinAsVolunteer() {
     <div className="font-sans">
       <Navbar />
 
-      {/* HERO */}
-     <section className="relative py-14 px-6 text-center overflow-hidden">
+
+<section className="relative py-28 px-6 text-center bg-[var(--marian-blue-light)] text-black">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white">
+            Eyes That See, Hearts That Care
+
+          </h1>
+          <p className="text-xl opacity-90 text-black font-semibold">
+            Your passion combined with our vision can change lives. Join Open
+            Eyes Foundation as a leader, mentor, and catalyst for social change.
+          </p>
+          <a
+            href="#enroll"
+            className="inline-block mt-6 px-10 py-4 rounded-full bg-[hsl(var(--background))] text-[hsl(var(--primary))] font-bold hover:opacity-90 transition"
+          >
+            APPLY NOW
+          </a>
+        </div>
+      </section>
+                        {/* HERO */}
+     <section className="relative py-6 pt-16 px-6 text-center overflow-hidden bg-[hsl(var(--muted))]">
   {/* Gradient overlay */}
   <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--primary)/0.08)] to-transparent" />
 
@@ -59,24 +78,13 @@ export default function JoinAsVolunteer() {
 
     {/* Tagline */}
     <p className="text-gray-600">
-      Be the Change · Inspire Lives · Lead With Purpose
+      Be the Change · Inspire Lives · Lead with Purpose
     </p>
 
-    {/* Optional smaller heading */}
-    <h6 className="text-2xl font-semibold pt-4">
-      Be the Hero, Make a Difference
-    </h6>
-
-    {/* Supporting text */}
-    <p className="text-lg leading-relaxed text-justify max-w-3xl mx-auto">
-      Every small act of kindness can create a ripple of positive impact. Volunteer your time, skills, and energy to help those in need, inspire change, and be the hero in someone’s story.
-    </p>
 
   </div>
 </section>
-
-
-       <section className="bg-[hsl(var(--muted))] py-20">
+       <section className="bg-[hsl(var(--muted))] py-5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-12 text-center">
             What You’ll Gain as an Intern
@@ -103,7 +111,7 @@ export default function JoinAsVolunteer() {
                 className="bg-[hsl(var(--card))] p-8 rounded-2xl shadow-md border-t-4 border-[hsl(var(--primary))] text-center"
               >
                 <h3 className="font-semibold text-lg mb-5">{item.title}</h3>
-                <p className="text-muted-foreground text-justify ">{item.desc}</p>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -111,7 +119,7 @@ export default function JoinAsVolunteer() {
       </section>
 
       {/* FORM */}
-      <section id="enroll" className="py-28 px-6">
+      <section id="enroll" className="bg-[hsl(var(--muted))] py-6 pb-20">
         <div className="max-w-3xl mx-auto bg-white p-10 rounded-3xl shadow-xl border">
           <h2 className="text-3xl font-bold mb-10">
             Volunteer Enrollment Form

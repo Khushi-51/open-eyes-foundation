@@ -46,30 +46,42 @@ export default function JoinAsMember() {
       <Navbar />
 
       {/* HERO — SAME AS INTERNSHIP */}
-      <section className="relative py-14 px-6 text-center overflow-hidden ">
-        <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--primary)/0.08)] to-transparent" />
+       <section className="relative py-16 px-6 text-center overflow-hidden">
+        <div className="absolute inset-0 bg-[var(--marian-blue-light)] to-transparent" />
+        <div className="relative max-w-5xl mx-auto space-y-4 p-10 rounded-3xl">
+          
+          <h2 className="text-4xl md:text-6xl font-extrabold text-white">
+          A Shield for Education
+        </h2>
+        <p className="text-xl opacity-90 text-black font-semibold">
+          True change happens when strength is sustained. By becoming a
+          Mission 100 Patron, you ensure that our office doors remain open,
+          our staff remains dedicated, and every child receives the tools
+          they need to thrive.
+        </p>
+        <a
+            href="#join"
+            className="inline-block mt-6 px-10 py-4 rounded-full bg-[hsl(var(--background))] text-[hsl(var(--primary))] font-bold hover:opacity-90 transition"
+          >
+            APPLY NOW
+          </a>
+        </div>
+      </section>
+      <section className="relative py-6 pt-16 px-6 text-center overflow-hidden bg-[hsl(var(--muted))]  ">
+        <div className="absolute inset-0 bg-gradient-to-b bg-[hsl(var(--muted))] " />
         <div className="relative max-w-5xl mx-auto space-y-4">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
+          <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] relative z-10">
           Mission 100
         </h1>
           <p className="text-gray-600">
             100 Leaders · 100 Pillars · One Shared Promise
-          </p>
-
-          <h2 className="text-2xl font-semibold pt-4">
-            A Shield for Education
-          </h2>
-
-          <p className="text-lg leading-relaxed text-justify">
-            True change happens when strength is sustained. By becoming a
-            Mission 100 Patron, you ensure long-term impact.
           </p>
         </div>
       </section>
 
 
       {/* Card 2 */}
-      <section className="bg-[hsl(var(--muted))] py-20 ">
+      <section className="bg-[hsl(var(--muted))] pb-5 ">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-12 text-center">
             Why Mission 100 Matters
@@ -85,8 +97,8 @@ export default function JoinAsMember() {
                 key={i}
                 className="bg-[hsl(var(--card))] p-8 rounded-2xl shadow-md border-t-4 border-[hsl(var(--primary))] text-center"
               >
-                <h3 className="font-semibold text-lg mb-5">{item.title}</h3>
-                <p className="text-muted-foreground text-justify">{item.desc}</p>
+                <h3 className="font-semibold text-lg mb-6">{item.title}</h3>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -94,7 +106,7 @@ export default function JoinAsMember() {
       </section>
 
       {/* FORM — SAME CARD STYLE AS INTERNSHIP */}
-      <section className="bg-[hsl(var(--muted))] py-5 pb-20">
+      <section id="join" className="bg-[hsl(var(--muted))] py-6 pb-20">
         <div className="max-w-4xl mx-auto bg-[hsl(var(--card))] p-10 rounded-3xl shadow-xl">
           <h2 className="text-3xl font-bold text-center mb-10 text-[hsl(var(--primary))]">
             Mission 100 Patron Enrollment

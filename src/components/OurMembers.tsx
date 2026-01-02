@@ -43,11 +43,11 @@ export default function OurMembers() {
       <div className="max-w-7xl mx-auto px-4">
 
         {/* Heading */}
-        <div className="mb-6">
-          <h3 className=" text-center text-2xl font-bold text-gray-900">
+        <div className="mb-6 text-center">
+          <h3 className=" text-3xl md:text-4xl font-bold text-[var(--marian-blue-200)]">
             Our Contributers
           </h3>
-          <p className="text-center text-gray-600 text-sm mt-1">
+          <p className="mt-1 text-base text-[#374151]">
             People who make our mission possible
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function OurMembers() {
                 <div className="relative w-full h-full transition-transform duration-500 transform-style-preserve-3d hover:rotate-y-180">
 
                   {/* FRONT */}
-                  <div className="absolute inset-0 bg-white rounded-full backface-hidden flex flex-col items-center justify-center p-4">
+                  <div className="absolute inset-0 rounded-full backface-hidden flex flex-col items-center justify-center p-4">
                     <img
                       src={member.image}
                       alt={member.name}

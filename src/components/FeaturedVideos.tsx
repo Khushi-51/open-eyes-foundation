@@ -18,11 +18,11 @@ export default function FeaturedVideos() {
 
         {/* Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900">
-            Stories That Inspire Change
+          <h2 className="text-3xl md:text-4xl font-bold text-[var(--marian-blue-200)]">
+            Real Stories. Real Impact. Inspiring Change.
           </h2>
-          <p className="text-gray-600 mt-3">
-            Real stories showing the impact of OpenEyes Foundation.
+          <p className="mt-1 text-base text-[#374151]">
+            Real stories showing the impact of Open Eyes Foundation
           </p>
         </div>
 
@@ -48,7 +48,7 @@ export default function FeaturedVideos() {
           {videos.slice(0).map((video, index) => (
             <div
               key={index}
-              className="overflow-hidden shadow-md bg-[#FACC15]"
+              className="overflow-hidden shadow-md bg-[#FACC15] border-2 border-black"
             >
               <iframe
                 className="w-full h-[300px]"
@@ -72,10 +72,14 @@ export default function FeaturedVideos() {
         </div>
       </div>
       <button
-        className="mt-8 mx-auto block px-6 py-2 bg-[#003366] text-white font-semibold rounded-md hover:bg-[#002244] transition"
-        onClick={() => window.open("https://www.youtube.com/@OpenEyesFoundation", "_blank")}
+      className="mt-8 mx-auto block px-6 py-2 bg-[#003366] text-white font-semibold rounded-md hover:bg-[#002244] transition"
+      >
+      <a
+        
+        href ="/Gallery"
       >
         View More
+      </a>
       </button>
           
     </section>

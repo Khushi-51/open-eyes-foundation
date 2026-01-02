@@ -49,7 +49,29 @@ export default function Internship() {
       <Navbar />
 
       {/* HERO */}
-      <section className="relative py-14 px-6 text-center overflow-hidden">
+      
+<section className="relative py-28 px-6 text-center bg-[var(--marian-blue-light)] text-black">
+        <div className="max-w-5xl mx-auto space-y-6">
+          <h1 className="text-4xl md:text-6xl font-extrabold text-white">
+            Mind that Learn, Hands that Serve
+
+          </h1>
+          <p className="text-xl opacity-90 text-black font-semibold">
+          Gain hands-on experience while contributing to meaningful social
+          impact projects that truly make a difference.
+          Open Eyes Foundation offers internship opportunities for individuals
+          who want to learn, grow, and contribute to impactful initiatives.
+        </p>
+          <a
+            href="#apply"
+            className="inline-block mt-6 px-10 py-4 rounded-full bg-[hsl(var(--background))] text-[hsl(var(--primary))] font-bold hover:opacity-90 transition"
+          >
+            APPLY NOW
+          </a>
+        </div>
+      </section>
+                        
+      <section className="relative py-6 pt-16 px-6 text-center overflow-hidden bg-[hsl(var(--muted))]">
         <div className="absolute inset-0 bg-gradient-to-b from-[hsl(var(--primary)/0.08)] to-transparent" />
         <div className="relative max-w-5xl mx-auto space-y-4">
           <h1 className="text-3xl md:text-5xl font-extrabold text-[#001B44] mb-4 relative z-10">
@@ -57,23 +79,14 @@ export default function Internship() {
         </h1>
           <p className="text-gray-600">At Open Eyes Foundation</p>
         </div>
-        <section className="max-w-6xl mx-auto px-6 py-5 text-center space-y-4">
-        <p className="text-lg text-muted-foreground">
-          Gain hands-on experience while contributing to meaningful social
-          impact projects that truly make a difference.
-        </p>
-        <p className="text-lg leading-relaxed">
-          Open Eyes Foundation offers internship opportunities for individuals
-          who want to learn, grow, and contribute to impactful initiatives.
-        </p>
-      </section>
+      
       </section>
 
       {/* INTRO */}
       
 
       {/* WHAT YOU GAIN */}
-      <section className="bg-[hsl(var(--muted))] py-20">
+      <section className="bg-[hsl(var(--muted))] py-5">
         <div className="max-w-6xl mx-auto px-6">
           <h2 className="text-3xl font-semibold mb-12 text-center">
             What You’ll Gain as an Intern
@@ -98,7 +111,7 @@ export default function Internship() {
       </section>
 
       {/* INTERNSHIP FORM */}
-      <section className="bg-[hsl(var(--muted))] py-5 pb-20">
+      <section id="apply" className="bg-[hsl(var(--muted))] py-5 pb-20">
         <div className="max-w-4xl mx-auto bg-[hsl(var(--card))] p-10 rounded-3xl shadow-xl">
           <h2 className="text-3xl font-bold text-center mb-10 text-[hsl(var(--primary))]">
             Internship Application Form
