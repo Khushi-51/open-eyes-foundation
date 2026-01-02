@@ -58,11 +58,11 @@ export default function Internship() {
           <p className="text-gray-600">At Open Eyes Foundation</p>
         </div>
         <section className="max-w-6xl mx-auto px-6 py-5 text-center space-y-4">
-        <p className="text-lg text-muted-foreground text-justify">
+        <p className="text-lg text-muted-foreground">
           Gain hands-on experience while contributing to meaningful social
           impact projects that truly make a difference.
         </p>
-        <p className="text-lg leading-relaxed text-justify">
+        <p className="text-lg leading-relaxed">
           Open Eyes Foundation offers internship opportunities for individuals
           who want to learn, grow, and contribute to impactful initiatives.
         </p>
@@ -90,7 +90,7 @@ export default function Internship() {
                 className="bg-[hsl(var(--card))] p-8 rounded-2xl shadow-md border-t-4 border-[hsl(var(--primary))] text-center"
               >
                 <h3 className="font-semibold text-lg mb-5">{item.title}</h3>
-                <p className="text-muted-foreground text-justify">{item.desc}</p>
+                <p className="text-muted-foreground">{item.desc}</p>
               </div>
             ))}
           </div>
