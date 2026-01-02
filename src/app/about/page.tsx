@@ -162,21 +162,7 @@ export default function AboutPage(): React.ReactElement {
       {/* ======= TEAM SECTION ======= */}
       <TeamSection />
 
-      {/* ======= FOUNDER SECTION ======= */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-6 md:px-12 py-10 text-center">
-        <h2 className="text-2xl sm:text-3xl font-semibold mb-2">
-          About the Founder
-        </h2>
-        <p className="text-gray-600 text-sm sm:text-base mb-6">
-          Learn about the founder and the story behind Open Eyes Foundation.
-        </p>
-        <Link
-          href="/about/founder"
-          className="inline-block px-5 py-2.5 bg-[#FFD05A] text-[#003366] rounded-lg font-semibold hover:bg-[#ffc940] transition-all duration-300"
-        >
-          About the Founder
-        </Link>
-      </section>
+    
 
       <SiteFooter />
     </main>
